@@ -21,6 +21,10 @@ h1, h2, h3 {
     margin-left: 3vw;
 }
 
+h1 {
+    font-size: 28px;
+}
+
 div.h3 {
     margin-left: 5vw; 
     margin-top: 0;
@@ -39,8 +43,45 @@ div.h3 {
     display: inline-block;
     border: 17px solid orangered;
     margin-left: 12%;
-    margin-right: 12%;   
-   
-
-
+    margin-right: 12%;  
+        
 }
+
+/* TABLE */
+
+span {
+    border: 1px solid orangered;
+    display: block;
+    width: 89%;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    color: orangered;
+    margin-bottom: 2vh;
+}
+
+table {
+    border: 0;
+    padding: 3px;
+    display: block;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    color: black;
+}
+
+th {
+    font-weight: bold;
+    border: 1px solid black;
+    /* margin-bottom: 2px;
+    border-collapse: separate; */
+    padding: 5px;
+    padding-right: 40px;
+}
+
+td {
+    padding: 20px;
+    padding-right: 40px;
+    border: 1px solid black;
+  }
+
