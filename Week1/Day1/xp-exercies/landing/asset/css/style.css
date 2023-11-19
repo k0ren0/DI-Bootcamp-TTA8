@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(https://images.pexels.com/photos/154246/pexels-photo-154246.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+   }
+
+header {
+    background: #ffffff;
+    color: white;
+    /* text-align: center; */
+    size: 3vh;
+    padding: 2em 0;
+}
+
+h1 {
+    font-size: 50px;
+    font-family:Geneva, Tahoma
+}
+
+h3 {
+    font-size: 20px;
+    font-family:Geneva, Tahoma
+}
+
+.header-container {
+    display: inline-block;
+    }
+
+.head-text {
+    display: inline-block;
+    color: #333;
+    position: absolute;
+    top: 1%;
+    left: 20%;
+}
+
+section {
+    padding: 2em 0;
+    text-align: center;
+    color: white;
+    margin-top: 16vh;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    display: inline-block;
+}
+
+/* BUTTON */
+
+.up-button, .cta-button {
+
+    text-decoration: none;
+    color: white;
+    background-color: #0099d6;
+    border-radius: 4px;
+
+}
+
+.email-input {
+    padding: 10px;
+    font-size: 1.5em;
+    width: 25%;
+    margin-right: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    }
+
+.up-button {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 1.5em;
+    position: absolute;
+    top: 2%;
+    right: 20%;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 35px;
+    font-size: 1.5em;
+    }
+
+
+
+/* footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+} */
