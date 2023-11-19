@@ -1,7 +1,21 @@
+main {
+           margin-left: 3vw; 
+           margin-top: 3vh;
+    }
+
 mark {
     background-color: yellow;
 }
 
 h3 {
-    margin-left: 3vw;
+    margin-left: 4vw;
+}
+
+div.h3 {
+    margin-left: 6vw; 
+    margin-top: 0;
+}
+
+.h2-m {
+    text-align: center;
 }
