@@ -40,14 +40,17 @@ body {
   .remember-me {
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     margin-top: 10px;
     font-size: 14px;
-    text-align: left;
   }
 
   .remember-me label {
     margin-right: 10px;
+  }
+
+  .forgot {
+    text-decoration: none;
   }
 
   .social-icons {
