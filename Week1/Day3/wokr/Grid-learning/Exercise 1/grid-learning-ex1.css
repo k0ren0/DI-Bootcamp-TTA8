@@ -1,3 +1,8 @@
+body {
+    border: 2px solid black;
+    padding: 5% 5% 5% 3%;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr) ;
@@ -8,6 +13,10 @@
     "red3 blue3 blue3"
     "yellow1 yellow1 yellow1";
     gap: 10px;
+}
+
+.item1, .item2, .item3,.item4,.item5,.item6,.item7,.item8,.item9, .item10 {
+    border: 2px solid black;
 }
 
 .item1 {
