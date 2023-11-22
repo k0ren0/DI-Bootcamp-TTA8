@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="npm i bootstrap-icons">
     <title>Exr-1</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
-        <div class="container-fluid">
+
+<style>
+    body {
+        background-color: rgb(255, 255, 255);
+    }
+
+
+</style>
+
+<body> 
+    <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark" >
+        <div class="container-fluid" style="margin-left:6rem">
           <a class="navbar-brand" href="#">Project #9</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,13 +50,62 @@
                 </ul>
               </li>
             </ul>
+           
+            <form class="form-inline d-flex ml-auto">
+                <input class="form-control mr-sm-2" style="margin-right:0.5rem" type="email" placeholder="Email" aria-label="Email">
+                <input class="form-control mr-sm-2" style="margin-right:0.5rem" type="password" placeholder="Пароль" aria-label="Password">
+            </form>
+            
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+                <button type="button" class="btn btn-success" style="margin-right:6rem">Sign In</button>
             </form>
           </div>
         </div>
       </nav>
+
+    <header>
+        <div class="p-5 bg-light">
+            <h1 class="mb-3" style="margin-left: 3.5rem">Hello, world!</h1>
+            <h4 class="mb-3" style="margin-left: 3.5rem">This is Exercise #1 Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+            <a class="btn btn-primary" href="" role="button"  style="margin-left: 3.5rem">Learn more</a>
+        </div>
+    <header>
+
+    <main>
+        <div class="container">
+            <div class="row align-items-center" style="margin: 2rem">
+              <div class="col">
+                <h3>Heading</h3>
+                <p class="fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ut earum eius ipsum. Aliquam fugit corporis pariatur! Doloremque debitis animi sequi vitae atque eius maxime ratione optio! Illo, necessitatibus ullam!</p>
+                 <button type="button" class="btn btn-outline-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-bar-graph" viewBox="0 0 16 16">
+                    <path d="M4.5 12a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5zm3 0a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5zm3 0a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5z"/>
+                    <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"/>
+                  </svg> View details</button>
+
+              </div>
+              <div class="col">
+                <h3>Heading</h3>
+                <p class="fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ut earum eius ipsum. Aliquam fugit corporis pariatur! Doloremque debitis animi sequi vitae atque eius maxime ratione optio! Illo, necessitatibus ullam!</p>
+                <button type="button" class="btn btn-outline-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+                    <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                  </svg> View details</button>
+
+              </div>
+              <div class="col">
+                <h3>Heading</h3>
+                <p class="fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ut earum eius ipsum. Aliquam fugit corporis pariatur! Doloremque debitis animi sequi vitae atque eius maxime ratione optio! Illo, necessitatibus ullam!</p>
+                <button type="button" class="btn btn-outline-secondary"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-map" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"/>
+                    <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
+                  </svg> View details</button>
+
+              </div>
+            </div>
+
+    </main>
+
+    
 
 
     
