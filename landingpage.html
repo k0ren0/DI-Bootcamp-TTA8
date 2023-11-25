@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Full Stack Developer Landing Page</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Дополнительные стили для страницы -->
+    <style>
+        body {
+            padding-top: 56px;
+            background-image: url('car-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-top: 72px;
+            }
+        }
+
+        .masthead {
+            text-align: center;
+            padding: 100px 0;
+            color: #fff;
+            background-image: url('masthead-car-bg.jpg');
+            background-size: cover;
+        }
+
+        #about,
+        #projects,
+        #contact {
+            padding: 80px 0;
+            color: #333;
+        }
+
+        #about {
+            background-image: url('about-car-bg.jpg');
+            background-size: cover;
+        }
+
+        #projects {
+            background-image: url('projects-car-bg.jpg');
+            background-size: cover;
+        }
+
+        #contact {
+            background-image: url('contact-car-bg.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Your Name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">My Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="masthead">
+    <div class="masthead-content">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold mb-4">Full Stack Developer</h1>
+            <h2 class="lead mb-8">Crafting Digital Solutions</h2>
+            <a href="#contact" class="btn btn-primary btn-xl rounded-pill">Contact Me</a>
+        </div>
+    </div>
+</header>
+
+<section id="about" class="bg-light">
+    <div class="container">
+        <div class="text-center py-5">
+            <h2 class="display-4 font-weight-bold mb-4">About Me</h2>
+            <p class="lead">Brief description about yourself and your passion for full-stack development.</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <div class="text-center py-5">
+            <h2 class="display-4 font-weight-bold mb-4">My Projects</h2>
+            <div class="row">
+                <!-- Здесь добавьте блоки с вашими проектами, используя Bootstrap классы для карточек (card) -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="project1.jpg" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1</h5>
+                            <p class="card-text">Description of Project 1.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <!-- Добавьте другие блоки с проектами по аналогии -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="bg-light">
+    <div class="container">
+        <div class="text-center py-5">
+            <h2 class="display-4 font-weight-bold mb-4">Contact Me</h2>
+            <!-- Форма обратной связи Bootstrap -->
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <div class="form-group">
+                            <input class="form-control" id="name" type="text" placeholder="Your Name *"
+                                   required="required" data-validation-required-message="Please enter your name.">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mx-auto">
+                        <div class="form-group">
+                            <input class="form-control" id="email" type="email" placeholder="Your Email *"
+                                   required="required" data-validation-required-message="Please enter your email address.">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Your Message *"
+                              required="required" data-validation-required-message="Please enter a message."></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton"
+                            type="submit">Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Подключение Bootstrap JS (jQuery и Popper.js должны быть подключены перед Bootstrap JS) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
