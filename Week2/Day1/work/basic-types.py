@@ -112,20 +112,20 @@ print(f"You are {age} years old")
     #print("You are a child")
 
 #VARIANT 2
-"""
-if age is 18 or age > 18:
-    print('You are an adult')
-elif 18 > age > 12 :
-    print("You are a teenager")
-else: 
-    print("You are a child")
-"""
+
+# if age is 18 or age > 18:
+#     print('You are an adult')
+# elif 18 > age > 12 :
+#     print("You are a teenager")
+# else: 
+#     print("You are a child")
+
 
 # EXRCISE
 
 if 1 <= number <= 100:
     print('FIZZ')
-elif 18 > age > 12 :
+elif 18 > number > 12 :
     print("You are a teenager")
 else: 
     print("You are a child")
