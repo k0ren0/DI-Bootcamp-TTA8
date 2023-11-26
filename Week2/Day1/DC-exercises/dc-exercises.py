@@ -24,7 +24,7 @@
     #     print(user_input[:i])
 
     # ---------------------------
-    # # variant 2 (help)
+    # # variant 2 (helps) 
     # ---------------------------
     
     # "Constructing the string character by character:"
