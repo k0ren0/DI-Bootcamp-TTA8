@@ -47,7 +47,7 @@
 
 #Bool
 
-#bool_var = False
+#print(bool(bool_var))
 #print(bool(bool_var))
 
 
@@ -99,8 +99,8 @@
 #age = input("How old are you? ")
 #print("You are {} years old".format(age))
 
-age = int(input("How old are you? "))
-print(f"You are {age} years old")
+# age = int(input("How old are you? "))
+# print(f"You are {age} years old")
 
 
 #VARIANT 1
