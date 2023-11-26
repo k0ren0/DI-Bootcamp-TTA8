@@ -73,3 +73,33 @@
 #Exercise 7 : Odd Or Even
 #----------------------------------------------------------------
 
+# a = int(input("Enter 'a' : "))
+
+# if a % 2 == 0:
+#     print("Even")
+# else:
+#     print("Odd")
+
+#----------------------------------------------------------------
+#Exercise 8 : What’s Your Name ?
+#----------------------------------------------------------------
+
+# name = input("Enter your name: ")
+
+# if name == "Viktor":
+#     print("There are never many people named Viktor :)")
+# else:
+#     print("Find out where to change your name to the correct one, namely Viktor")
+
+#----------------------------------------------------------------
+#Exercise 9 : Tall Enough To Ride A Roller Coaster
+#----------------------------------------------------------------
+
+# inch_value = int(input("Enter your height in inches : "))
+
+# sant_value = inch_value * 2.54
+
+# if sant_value >= 145 :
+#     print("Your states they are tall enough to ride!")
+# else:
+#     print("You need to grow some more to ride!")
