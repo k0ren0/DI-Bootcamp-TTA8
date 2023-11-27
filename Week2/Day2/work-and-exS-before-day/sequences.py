@@ -90,15 +90,47 @@
 # print(d)
 
     #SETS
-my_set = set()
-my_set2 = {60, 14, "Rick", "Anna",}
+# my_set = set()
+# my_set2 = {60, 14, "Rick", "Anna",}
 
-my_set.add("Rick")
-my_set.add("Morty")
-my_set.add("Rick")
+# my_set.add("Rick")
+# my_set.add("Morty")
+# my_set.add("Rick")
 
-# print(my_set2)
+# # print(my_set2)
 
-print(my_set.intersection(my_set2))
+# print(my_set.intersection(my_set2))
 
-print(my_set.union(my_set2))
+# print(my_set.union(my_set2))
+
+# numbers = list(range(1,6))
+# print(numbers)
+
+        # current_number = 1 
+        # while current_number <= 10:    
+        #     print(current_number)   
+        #     current_number += 1
+
+        # print("Finished")
+
+        # cities = ["Tel Aviv", "San Francisco", "Paris", "Barcelona"]
+
+        # for city in cities:
+        #     print("I once went to", city)
+
+        # numbers = list(range(1,6))
+        # print(numbers)
+
+# Exr
+# num = int(input("Enter a number: "))
+# print(f"Multiplication table for: {num}")
+
+# for i in range (1, 11):
+#     print(f"{num} * {i} = {num * i}")
+
+
+num = 1
+while num <= 10:
+    print(num)
+    num += 1
+    
