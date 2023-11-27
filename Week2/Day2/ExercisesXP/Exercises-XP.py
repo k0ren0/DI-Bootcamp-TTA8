@@ -72,10 +72,10 @@
     # ----------------------------------------------------------------
 
 
-Vname = ''
-while name != 'Viktor':
-  name = input('What is your name? ')
-print('You guessed the right name!')
+# name = ''
+# while name != 'Viktor':
+#   name = input('What is your name? ')
+# print('You guessed the right name!')
 
 
     # ----------------------------------------------------------------
