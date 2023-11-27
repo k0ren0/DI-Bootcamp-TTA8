@@ -23,6 +23,16 @@
     # for i in range(1, len(user_input) + 1):
     #     print(user_input[:i])
 
+    # # Bonus:
+    # shuffled_string = list(user_input)
+    # random.shuffle(shuffled_string)
+    # shuffled_string = ''.join(shuffled_string)
+
+    # print("Jumbled string:", shuffled_string)
+
+
+#END
+
     # ---------------------------
     # # variant 2 (helps) 
     # ---------------------------
@@ -32,13 +42,6 @@
     # for i in user_input:
     #     result += i
     #     print (result)
-
-    # # Bonus:
-    # shuffled_string = list(user_input)
-    # random.shuffle(shuffled_string)
-    # shuffled_string = ''.join(shuffled_string)
-
-    # print("Jumbled string:", shuffled_string)
 
 
 
