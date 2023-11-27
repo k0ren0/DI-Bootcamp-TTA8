@@ -129,8 +129,21 @@
 #     print(f"{num} * {i} = {num * i}")
 
 
-num = 1
-while num <= 10:
-    print(num)
-    num += 1
-    
+# num = 1
+# while num <= 10:
+#     print(num)
+#     num += 1
+   
+   # Variant 3
+numbers = list(range(1, 21))
+
+print("Numbers from 1 to 20:")
+print(numbers)
+
+print("\n")
+
+print("Every element which has an even index:")
+for i, num in enumerate(numbers):
+    if i % 2 != 0:
+        print(num, end=" ")
+ 
