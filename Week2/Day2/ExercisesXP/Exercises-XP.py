@@ -160,25 +160,16 @@
     # ----------------------------------------------------------------
 
 
-# def remove_duplicates_consecutive(input_string):
-#     result_string = ""
-#     prev_char = None
+sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
 
-#     for char in input_string:
-#         if char != prev_char:
-#             result_string += char
-#             prev_char = char
+while "Pastrami sandwich" in sandwich_orders:
+    sandwich_orders.remove("Pastrami sandwich")
 
-#     return result_string
+print("\n")
+print("Updated sandwich orders:")
+print(sandwich_orders)
 
-# # Input from the user
-# user_input = input("Enter a string: ")
 
-# # Remove duplicates
-# result = remove_duplicates_consecutive(user_input)
-
-# # Result
-# print("String with consecutive duplicates removed:", result)
 
 
 
