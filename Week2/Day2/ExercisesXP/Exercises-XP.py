@@ -82,11 +82,105 @@
     # Exercise 7: Favorite Fruits
     # ----------------------------------------------------------------
 
+# favorite_fruits_input = input("Enter your favorite fruit(s) separated by a space : ")
+# favorite_fruits_list = favorite_fruits_input.split()
+# chosen_fruit = input("Now, enter a name of any fruit: ")
+# if chosen_fruit in favorite_fruits_list:
+#     print("You chose one of your favorite fruits! Enjoy!")
+# else:
+#     print("You chose a new fruit. I hope you enjoy.")
 
 
- 
+    # ----------------------------------------------------------------
+    # Exercise 8: Who Ordered A Pizza ?
+    # ----------------------------------------------------------------
 
-    
+# toppings = []
+# total_price = 10  # Base pizza's price
+
+# while True:
+#     topping = input("Enter a pizza topping (type 'quit' to finish): ")
+
+#     if topping.lower() == 'quit':
+#         break
+
+#     toppings.append(topping)
+#     total_price += 2.5 #add topping
+
+#     print(f"Adding {topping} to your pizza.")
+
+# print("\nYour pizza toppings:")
+# for topping in toppings:
+#     print(f"- {topping}")
+
+# print(f"\nTotal price for your pizza: ${total_price}")
+
+
+    # ----------------------------------------------------------------
+    # Exercise 9: Cinemax
+    # ----------------------------------------------------------------
+
+
+# def calculate_ticket_cost(age):
+#     if age < 3:
+#         return 0
+#     elif 3 <= age <= 12:
+#         return 10
+#     else:
+#         return 15
+
+# def main():
+#     family_size = int(input("Enter the number of people in the family: "))
+#     total_cost = 0
+
+#     for _ in range(family_size):
+#         age = int(input("Enter the age of the person: "))
+#         ticket_cost = calculate_ticket_cost(age)
+#         total_cost += ticket_cost
+
+#     print(f"The total cost for the family's tickets is: ${total_cost}")
+
+#   #Second part
+
+#     teenagers = ["Alice", "Bob", "Charlie", "David", "Eva"]
+#     allowed_teens = []
+
+#     for teen in teenagers:
+#         age = int(input(f"Enter the age of {teen}: "))
+#         if 16 <= age <= 21:
+#             allowed_teens.append(teen)
+
+#     print("Final list of teenagers allowed to watch the movie:", allowed_teens)
+
+# if __name__ == "__main__":
+#     main()
+
+    # ----------------------------------------------------------------
+    # Exercise 10 : Sandwich Orders
+    # ----------------------------------------------------------------
+
+
+# def remove_duplicates_consecutive(input_string):
+#     result_string = ""
+#     prev_char = None
+
+#     for char in input_string:
+#         if char != prev_char:
+#             result_string += char
+#             prev_char = char
+
+#     return result_string
+
+# # Input from the user
+# user_input = input("Enter a string: ")
+
+# # Remove duplicates
+# result = remove_duplicates_consecutive(user_input)
+
+# # Result
+# print("String with consecutive duplicates removed:", result)
+
+
 
 
 
