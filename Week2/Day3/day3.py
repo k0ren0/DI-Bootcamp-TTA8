@@ -94,6 +94,5 @@ for key in keys_to_remove:
     
 print(sample_dict)
 
-#     sample_dict.pop("name", "salary")
-#     print(keys_to_remove.items())
+
 
