@@ -40,60 +40,97 @@
     # ----------------------------------------------------------------
 
 
-brand = {"name": "Zara",
-"creation_date": 1975,
-"creator_name": "Amancio Ortega Gaona",
-"type_of_clothes": ["men", "women", "children", "home"],
-"international_competitors": ["Gap", "H&M", "Benetton"],
-"number_stores": 7000,
-"major_color":{
-    "France": "blue",
-    "Spain": "red",
-    "US": ["pink", "green"]}
-}
+# brand = {"name": "Zara",
+# "creation_date": 1975,
+# "creator_name": "Amancio Ortega Gaona",
+# "type_of_clothes": ["men", "women", "children", "home"],
+# "international_competitors": ["Gap", "H&M", "Benetton"],
+# "number_stores": 7000,
+# "major_color":{
+#     "France": "blue",
+#     "Spain": "red",
+#     "US": ["pink", "green"]}
+# }
 
-brand["number_stores"] = 2
-print("\n")
-print (brand["type_of_clothes"])
+# brand["number_stores"] = 2
+# print("\n")
+# print (brand["type_of_clothes"])
 
-brand["country_creation"] = "Spain"
-print("\n")
-print(brand)
+# brand["country_creation"] = "Spain"
+# print("\n")
+# print(brand)
 
-print("\n")
-print (brand["international_competitors"])
-brand["international_competitors"] = "Gap", "H&M", "Benetton", "Desigual"
-print("\n")
-print (brand["international_competitors"])
+# print("\n")
+# print (brand["international_competitors"])
+# brand["international_competitors"] = "Gap", "H&M", "Benetton", "Desigual"
+# print("\n")
+# print (brand["international_competitors"])
 
-print("\n")
-del brand["creation_date"]
+# print("\n")
+# del brand["creation_date"]
 
-last_international_competitors = brand["international_competitors"][-1]
-print ("Last international competitor", last_international_competitors)
+# last_international_competitors = brand["international_competitors"][-1]
+# print ("Last international competitor", last_international_competitors)
 
-print("\n")
+# print("\n")
 
-print(f"The major clothes colors in the US: {brand["major_color"]["US"]}")
+# print(f"The major clothes colors in the US: {brand["major_color"]["US"]}")
 
-print("\n")
-nums = len(brand)
-print(f"the amount of key value pairs (ie. length of the dictionary): {nums}")
+# print("\n")
+# nums = len(brand)
+# print(f"the amount of key value pairs (ie. length of the dictionary): {nums}")
 
-print("\n")
-list_keys = list(brand.keys())
-print(list_keys)
+# print("\n")
+# list_keys = list(brand.keys())
+# print(list_keys)
 
 
-more_on_zara = {"creation_date": 1975,
-"number_stores": 10000
-}
+# more_on_zara = {"creation_date": 1975,
+# "number_stores": 10000
+# }
 
 
     # ----------------------------------------------------------------
     # Exercise 4 : Disney Characters
     # ----------------------------------------------------------------
 
+users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
+
+disney_users_A = {}
+for item, user in enumerate(users):
+    disney_users_A[user] = item
+print("Result 1:")
+print(disney_users_A)
+
+disney_users_B = {}
+for item, user in enumerate(users):
+    disney_users_B[item] = user
+print("\nResult 2:")
+print(disney_users_B)
+
+disney_users_C = dict(enumerate(sorted(users)))
+print("\nResult 3:")
+print(disney_users_C)
+
+print("\n")
+#The characters, which names contain the letter “i”.
+disney_users_A_i = {}
+for user in users:
+    if "i" in user.lower():
+        disney_users_A_i[user] = users.index(user)
+print("Result 1 names containing 'i':")
+print(disney_users_A_i)
+
+print("\n")
+#The characters, which names start with the letter “m” or “p”.
+disney_users_A_mp = {}
+for user in users:
+    if user[0].lower() == "m" or user[0].lower() == "p":
+        disney_users_A_mp[user] = users.index(user)
+print("\nResult 1 with 'm' or 'p':")
+print(disney_users_A_mp)
+
+# # END MY HEAD... 
 
 
 
