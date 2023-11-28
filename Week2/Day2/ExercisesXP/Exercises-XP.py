@@ -160,14 +160,14 @@
     # ----------------------------------------------------------------
 
 
-sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
+# sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
 
-while "Pastrami sandwich" in sandwich_orders:
-    sandwich_orders.remove("Pastrami sandwich")
+# while "Pastrami sandwich" in sandwich_orders:
+#     sandwich_orders.remove("Pastrami sandwich")
 
-print("\n")
-print("Updated sandwich orders:")
-print(sandwich_orders)
+# print("\n")
+# print("Updated sandwich orders:")
+# print(sandwich_orders)
 
 
 
