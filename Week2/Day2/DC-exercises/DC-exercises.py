@@ -1,4 +1,4 @@
-    # Daily Challenge: Build Up A String
+    # Daily Challenge : Lists & Strings
 
     # ----------------------------------------------------------------
     # Challenge 1
