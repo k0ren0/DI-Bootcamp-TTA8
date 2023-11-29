@@ -67,6 +67,28 @@
 # make_shirt(size="small", text="Don't buy it")
 
 
+    # ----------------------------------------------------------------
+    # Exercise 6 : Magicians …
+    # ----------------------------------------------------------------
+
+magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
+
+def show_magicians(magicians):
+    for magician in magicians:
+        print(magician)
+
+def make_great(magicians):
+    great_magicians = []
+    for magician in magicians:
+        great_magician = "the Great " + magician
+        great_magicians.append(great_magician)
+    return great_magicians
+
+
+show_magicians(magician_names)
+
+great_magician_names = make_great(magician_names)
+show_magicians(great_magician_names)
 
 
 
