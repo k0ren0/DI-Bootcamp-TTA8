@@ -16,18 +16,18 @@
     # Challenge 2
     # ----------------------------------------------------------------
 
-# # Input info
-# user_input = input("Enter a word: ")
+# Input info
+user_input = input("Enter a word: ")
 
-# # Remove consecutive duplicates
-# result_str = ""
-# prev_char = None
+# Remove consecutive duplicates
+result_str = ""
+prev_char = None
 
-# for char in user_input:
-#     if char != prev_char:
-#         result_str += char
-#     prev_char = char
+for char in user_input:
+    if char != prev_char:
+        result_str += char
+    prev_char = char
 
-# # Result
-# print("Original word:", user_input)
-# print("Word with consecutive duplicates removed:", result_str)
+# Result
+print("Original word:", user_input)
+print("Word with consecutive duplicates removed:", result_str)
