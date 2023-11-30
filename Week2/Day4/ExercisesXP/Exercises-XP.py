@@ -165,80 +165,63 @@
     # Exercise 8 : Star Wars Quiz
     # ----------------------------------------------------------------
 
-# data = [
-#     {
-#         "question": "What is Baby Yoda's real name?",
-#         "answer": "Grogu"
-#     },
-#     {
-#         "question": "Where did Obi-Wan take Luke after his birth?",
-#         "answer": "Tatooine"
-#     },
-#     {
-#         "question": "What year did the first Star Wars movie come out?",
-#         "answer": "1977"
-#     },
-#     {
-#         "question": "Who built C-3PO?",
-#         "answer": "Anakin Skywalker"
-#     },
-#     {
-#         "question": "Anakin Skywalker grew up to be who?",
-#         "answer": "Darth Vader"
-#     },
-#     {
-#         "question": "What species is Chewbacca?",
-#         "answer": "Wookiee"
-#     }
-# ]
+data = [
+    {
+        "question": "What is Baby Yoda's real name?",
+        "answer": "Grogu"
+    },
+    {
+        "question": "Where did Obi-Wan take Luke after his birth?",
+        "answer": "Tatooine"
+    },
+    {
+        "question": "What year did the first Star Wars movie come out?",
+        "answer": "1977"
+    },
+    {
+        "question": "Who built C-3PO?",
+        "answer": "Anakin Skywalker"
+    },
+    {
+        "question": "Anakin Skywalker grew up to be who?",
+        "answer": "Darth Vader"
+    },
+    {
+        "question": "What species is Chewbacca?",
+        "answer": "Wookiee"
+    }
+]
 
-# def star_quiz(data:dict)-> data:
-
-#     wrong_questions = {}
-
-#     for dict_question in data:
-#         question = dict_question["question"]
-#         answer = dict_question["answer"]
-
-#         u_answer = input("Write your answer: ")
-
-
-#         if u_answer is not answer:
-#             wrong_questions[question] = [u_answer]
+def star_quiz(data):
+    
+    right = 0
+    wrong = 0
+    wrong_answers = []
+    
+    for dict_question in data:
+        print(dict_question["question"])
+        u_answer = input("Write your answer: ")
+        if u_answer == dict_question["answer"]:
+            right += 1
+        else:
+            wrong += 1
+            wrong_answers.append({"question": dict_question["question"], "user_answer": u_answer, "correct_answer": dict_question["answer"]})
         
-#     return wrong_questions
+    return right, wrong, wrong_answers
 
-# user_answers = (star_quiz(data))
+right, wrong, wrong_answers = star_quiz(data)
 
-# def final_leaderb(user_answers:dict)-> None:
-#     user_answers = star_quiz()
-#     right_answers = data["answer"]
-
-#     for question in user_answers.keys():
-#         if question is data["question"]:
-#             print(f'Here are your answer {question}.\n Your answered: {user_answers[question]}, \n And the corrent answer was: {data["answer"]} ')
-
-
-# final_leaderb(user_answers)
+print(f"\nNumber of correct answers: {right}")
+print(f"Number of wrong answers: {wrong}")
+print(f"\n")
+print("List of wrong answers:")
+for wrong_answer in wrong_answers:
+    print(f"Question: {wrong_answer['question']}")
+    print(f"Your Answer: {wrong_answer['user_answer']}")
+    print(f"Correct Answer: {wrong_answer['correct_answer']}\n")
 
 
 
-
-                # def star_quiz(data):
-
-                #     wrong = 0
-                #     right = 0
-                #     for dict_question in data:
-                #         print(dict_question["question"])
-                #         u_answer = input("Write your answer: ")
-                #         if u_answer is dict_question["answer"]:
-                #             right += 1
-                #         else:
-                #             wrong += 1
-                        
-                #     return wrong, right
-
-                # print(star_quiz(data))
 
          
 
