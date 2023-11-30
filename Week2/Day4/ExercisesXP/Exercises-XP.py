@@ -66,30 +66,181 @@
 # make_shirt(size="medium", text="Don't buy it")
 # make_shirt(size="small", text="Don't buy it")
 
-
     # ----------------------------------------------------------------
     # Exercise 6 : Magicians …
     # ----------------------------------------------------------------
 
-magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
+# magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
 
-def show_magicians(magicians):
-    for magician in magicians:
-        print(magician)
+# def show_magicians(magicians):
+#     for magician in magicians:
+#         print(magician)
 
-def make_great(magicians):
-    great_magicians = []
-    for magician in magicians:
-        great_magician = "the Great " + magician
-        great_magicians.append(great_magician)
-    return great_magicians
+# def make_great(magicians):
+#     great_magicians = []
+#     for magician in magicians:
+#         great_magician = "the Great " + magician
+#         great_magicians.append(great_magician)
+#     return great_magicians
 
 
-show_magicians(magician_names)
+# show_magicians(magician_names)
 
-great_magician_names = make_great(magician_names)
-show_magicians(great_magician_names)
+# great_magician_names = make_great(magician_names)
+# show_magicians(great_magician_names)
 
+
+
+    # ----------------------------------------------------------------
+    # Exercise 7 : Temperature Advice
+    # ----------------------------------------------------------------
+
+                        ##### VERSION p. 1-3
+                        # import random
+
+                        # gen_random_temp_lam = lambda: random.randint(-10, 40)
+
+                        # # # # test
+                        # # gen_degree_lam = gen_random_temp_lam ()
+                        # # print(f"Random temperature: {gen_degree_lam}")
+
+                        # def main(lamba_function):
+                        #     temp_customer = lamba_function()
+                        #     print(f"The temperature right now is {temp_customer} degrees Celsius.")
+                        #     # return temp_customer
+
+                        #     if temp_customer < 0:
+                        #         print("Brrr that\'s freezing! Wear some extra layers today.")
+                        #     elif 0 < temp_customer <= 16:
+                        #         print("You chose a new fruit. I hope you enjoy.")
+                        #     elif 16 < temp_customer <= 23:
+                        #         print("You chose a new fruit. I hope you enjoy.")
+                        #     elif 24 <= temp_customer <= 32:
+                        #         print("You chose a new fruit. I hope you enjoy.")
+                        #     else:
+                        #         print("You are in the Antarktica?)")
+
+                        # result_temp = main(gen_random_temp_lam)
+    
+
+# import random
+
+# def gen_random_temp_lam(season):
+#     if season == 'winter':
+#         return random.randint(-10, 17)
+#     elif season == 'spring':
+#         return random.randint(16, 24)
+#     elif season == 'summer':
+#         return random.randint(32, 41)
+#     elif season == 'autumn' or season == 'fall':
+#         return random.randint(24, 33)
+#     else:
+#         print("Invalid season. Please enter 'summer', 'autumn', 'winter', or 'spring'.")
+
+# def main():
+#     user_season = input("Please enter a season ('summer', 'autumn', 'winter', 'spring'): ").lower()
+
+#     if user_season in ['summer', 'autumn', 'winter', 'spring']:
+#         temp_customer = gen_random_temp_lam(user_season)
+#         print(f"The temperature right now in {user_season} is {temp_customer} degrees Celsius.")
+
+#         if temp_customer < 0:
+#             print("Brrr that's freezing! Wear some extra layers today.")
+#         elif 0 <= temp_customer <= 16:
+#             print("You chose a new fruit. I hope you enjoy.")
+#         elif 16 < temp_customer <= 23:
+#             print("You chose a new fruit. I hope you enjoy.")
+#         elif 24 <= temp_customer <= 32:
+#             print("You chose a new fruit. I hope you enjoy.")
+#         else:
+#             print("You are in Israel?)")
+#     else:
+#         print("Invalid season. Please enter 'summer', 'autumn', 'winter', or 'spring'.")
+
+# main()
+
+
+
+    # ----------------------------------------------------------------
+    # Exercise 8 : Star Wars Quiz
+    # ----------------------------------------------------------------
+
+# data = [
+#     {
+#         "question": "What is Baby Yoda's real name?",
+#         "answer": "Grogu"
+#     },
+#     {
+#         "question": "Where did Obi-Wan take Luke after his birth?",
+#         "answer": "Tatooine"
+#     },
+#     {
+#         "question": "What year did the first Star Wars movie come out?",
+#         "answer": "1977"
+#     },
+#     {
+#         "question": "Who built C-3PO?",
+#         "answer": "Anakin Skywalker"
+#     },
+#     {
+#         "question": "Anakin Skywalker grew up to be who?",
+#         "answer": "Darth Vader"
+#     },
+#     {
+#         "question": "What species is Chewbacca?",
+#         "answer": "Wookiee"
+#     }
+# ]
+
+# def star_quiz(data:dict)-> data:
+
+#     wrong_questions = {}
+
+#     for dict_question in data:
+#         question = dict_question["question"]
+#         answer = dict_question["answer"]
+
+#         u_answer = input("Write your answer: ")
+
+
+#         if u_answer is not answer:
+#             wrong_questions[question] = [u_answer]
+        
+#     return wrong_questions
+
+# user_answers = (star_quiz(data))
+
+# def final_leaderb(user_answers:dict)-> None:
+#     user_answers = star_quiz()
+#     right_answers = data["answer"]
+
+#     for question in user_answers.keys():
+#         if question is data["question"]:
+#             print(f'Here are your answer {question}.\n Your answered: {user_answers[question]}, \n And the corrent answer was: {data["answer"]} ')
+
+
+# final_leaderb(user_answers)
+
+
+
+
+                # def star_quiz(data):
+
+                #     wrong = 0
+                #     right = 0
+                #     for dict_question in data:
+                #         print(dict_question["question"])
+                #         u_answer = input("Write your answer: ")
+                #         if u_answer is dict_question["answer"]:
+                #             right += 1
+                #         else:
+                #             wrong += 1
+                        
+                #     return wrong, right
+
+                # print(star_quiz(data))
+
+         
 
 
 
