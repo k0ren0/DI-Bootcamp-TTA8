@@ -95,34 +95,7 @@
     # Exercise 7 : Temperature Advice
     # ----------------------------------------------------------------
 
-                        ##### VERSION p. 1-3
-                        # import random
-
-                        # gen_random_temp_lam = lambda: random.randint(-10, 40)
-
-                        # # # # test
-                        # # gen_degree_lam = gen_random_temp_lam ()
-                        # # print(f"Random temperature: {gen_degree_lam}")
-
-                        # def main(lamba_function):
-                        #     temp_customer = lamba_function()
-                        #     print(f"The temperature right now is {temp_customer} degrees Celsius.")
-                        #     # return temp_customer
-
-                        #     if temp_customer < 0:
-                        #         print("Brrr that\'s freezing! Wear some extra layers today.")
-                        #     elif 0 < temp_customer <= 16:
-                        #         print("You chose a new fruit. I hope you enjoy.")
-                        #     elif 16 < temp_customer <= 23:
-                        #         print("You chose a new fruit. I hope you enjoy.")
-                        #     elif 24 <= temp_customer <= 32:
-                        #         print("You chose a new fruit. I hope you enjoy.")
-                        #     else:
-                        #         print("You are in the Antarktica?)")
-
-                        # result_temp = main(gen_random_temp_lam)
-    
-
+ 
 # import random
 
 # def gen_random_temp_lam(season):
@@ -161,6 +134,35 @@
 
 
 
+                       ##### FOR HISTORY !!!!!!!! VERSION p. 1-3
+                        # import random
+
+                        # gen_random_temp_lam = lambda: random.randint(-10, 40)
+
+                        # # # # test
+                        # # gen_degree_lam = gen_random_temp_lam ()
+                        # # print(f"Random temperature: {gen_degree_lam}")
+
+                        # def main(lamba_function):
+                        #     temp_customer = lamba_function()
+                        #     print(f"The temperature right now is {temp_customer} degrees Celsius.")
+                        #     # return temp_customer
+
+                        #     if temp_customer < 0:
+                        #         print("Brrr that\'s freezing! Wear some extra layers today.")
+                        #     elif 0 < temp_customer <= 16:
+                        #         print("You chose a new fruit. I hope you enjoy.")
+                        #     elif 16 < temp_customer <= 23:
+                        #         print("You chose a new fruit. I hope you enjoy.")
+                        #     elif 24 <= temp_customer <= 32:
+                        #         print("You chose a new fruit. I hope you enjoy.")
+                        #     else:
+                        #         print("You are in the Antarktica?)")
+
+                        # result_temp = main(gen_random_temp_lam)
+
+
+
     # ----------------------------------------------------------------
     # Exercise 8 : Star Wars Quiz
     # ----------------------------------------------------------------
@@ -192,33 +194,33 @@ data = [
     }
 ]
 
-def star_quiz(data):
+# def star_quiz(data):
     
-    right = 0
-    wrong = 0
-    wrong_answers = []
+#     right = 0
+#     wrong = 0
+#     wrong_answers = []
     
-    for dict_question in data:
-        print(dict_question["question"])
-        u_answer = input("Write your answer: ")
-        if u_answer == dict_question["answer"]:
-            right += 1
-        else:
-            wrong += 1
-            wrong_answers.append({"question": dict_question["question"], "user_answer": u_answer, "correct_answer": dict_question["answer"]})
+#     for dict_question in data:
+#         print(dict_question["question"])
+#         u_answer = input("Write your answer: ")
+#         if u_answer == dict_question["answer"]:
+#             right += 1
+#         else:
+#             wrong += 1
+#             wrong_answers.append({"question": dict_question["question"], "user_answer": u_answer, "correct_answer": dict_question["answer"]})
         
-    return right, wrong, wrong_answers
+#     return right, wrong, wrong_answers
 
-right, wrong, wrong_answers = star_quiz(data)
+# right, wrong, wrong_answers = star_quiz(data)
 
-print(f"\nNumber of correct answers: {right}")
-print(f"Number of wrong answers: {wrong}")
-print(f"\n")
-print("List of wrong answers:")
-for wrong_answer in wrong_answers:
-    print(f"Question: {wrong_answer['question']}")
-    print(f"Your Answer: {wrong_answer['user_answer']}")
-    print(f"Correct Answer: {wrong_answer['correct_answer']}\n")
+# print(f"\nNumber of correct answers: {right}")
+# print(f"Number of wrong answers: {wrong}")
+# print(f"\n")
+# print("List of wrong answers:")
+# for wrong_answer in wrong_answers:
+#     print(f"Question: {wrong_answer['question']}")
+#     print(f"Your Answer: {wrong_answer['user_answer']}")
+#     print(f"Correct Answer: {wrong_answer['correct_answer']}\n")
 
 
 
