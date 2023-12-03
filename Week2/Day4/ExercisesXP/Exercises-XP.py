@@ -79,7 +79,7 @@
 # def make_great(magicians):
 #     great_magicians = []
 #     for magician in magicians:
-#         great_magician = "the Great " + magician
+#         great_magician = "The Great " + magician
 #         great_magicians.append(great_magician)
 #     return great_magicians
 
@@ -88,8 +88,6 @@
 
 # great_magician_names = make_great(magician_names)
 # show_magicians(great_magician_names)
-
-
 
     # ----------------------------------------------------------------
     # Exercise 7 : Temperature Advice
