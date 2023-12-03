@@ -1,12 +1,18 @@
-    # ----------------------------------------------------------------
-    # Exercise 1 : Convert Lists Into Dictionaries
-    # ----------------------------------------------------------------
+#     ----------------------------------------------------------------
+#     Exercise 1 : Convert Lists Into Dictionaries
+#     ----------------------------------------------------------------
 
+# #Update
 # keys = ['Ten', 'Twenty', 'Thirty']
 # values = [10, 20, 30]
 
-# for item in zip(keys, values):
-#     print(item)
+# #Convert the zip object into a dict
+# result_dict = dict(zip(keys, values))
+# print(result_dict)
+
+                # # old
+                # for item in zip(keys, values):
+                #     print(item)
 
     # ----------------------------------------------------------------
     # Exercise 2 : Cinemax
@@ -90,45 +96,45 @@
 # }
 
 
-    # ----------------------------------------------------------------
-    # Exercise 4 : Disney Characters
-    # ----------------------------------------------------------------
+#     # ----------------------------------------------------------------
+#     # Exercise 4 : Disney Characters
+#     # ----------------------------------------------------------------
 
-users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
+# users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
 
-disney_users_A = {}
-for item, user in enumerate(users):
-    disney_users_A[user] = item
-print("Result 1:")
-print(disney_users_A)
+# disney_users_A = {}
+# for item, user in enumerate(users):
+#     disney_users_A[user] = item
+# print("Result 1:")
+# print(disney_users_A)
 
-disney_users_B = {}
-for item, user in enumerate(users):
-    disney_users_B[item] = user
-print("\nResult 2:")
-print(disney_users_B)
+# disney_users_B = {}
+# for item, user in enumerate(users):
+#     disney_users_B[item] = user
+# print("\nResult 2:")
+# print(disney_users_B)
 
-disney_users_C = dict(enumerate(sorted(users)))
-print("\nResult 3:")
-print(disney_users_C)
+# disney_users_C = dict(enumerate(sorted(users)))
+# print("\nResult 3:")
+# print(disney_users_C)
 
-print("\n")
-#The characters, which names contain the letter “i”.
-disney_users_A_i = {}
-for user in users:
-    if "i" in user.lower():
-        disney_users_A_i[user] = users.index(user)
-print("Result 1 names containing 'i':")
-print(disney_users_A_i)
+# print("\n")
+# #The characters, which names contain the letter “i”.
+# disney_users_A_i = {}
+# for user in users:
+#     if "i" in user.lower():
+#         disney_users_A_i[user] = users.index(user)
+# print("Result 1 names containing 'i':")
+# print(disney_users_A_i)
 
-print("\n")
-#The characters, which names start with the letter “m” or “p”.
-disney_users_A_mp = {}
-for user in users:
-    if user[0].lower() == "m" or user[0].lower() == "p":
-        disney_users_A_mp[user] = users.index(user)
-print("\nResult 1 with 'm' or 'p':")
-print(disney_users_A_mp)
+# print("\n")
+# #The characters, which names start with the letter “m” or “p”.
+# disney_users_A_mp = {}
+# for user in users:
+#     if user[0].lower() == "m" or user[0].lower() == "p":
+#         disney_users_A_mp[user] = users.index(user)
+# print("\nResult 1 with 'm' or 'p':")
+# print(disney_users_A_mp)
 
 # # END MY HEAD... 
 

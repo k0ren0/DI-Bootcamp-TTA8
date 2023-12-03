@@ -25,11 +25,24 @@
     # ----------------------------------------------------------------
 
 
-# def describe_city(city, country):
+# # Update
+# def describe_city(city="Unknown City", country="Unknown Country"):
 #     print(city + " is in " + country)
 #     return city, country
 
+# describe_city() 
 # describe_city("Minsk", "Belarus")
+
+
+            ##Old version
+            # def describe_city(city, country):
+            #     print(city + " is in " + country)
+            #     return city, country
+
+            # describe_city("Minsk", "Belarus")
+
+
+
 
 
     # ----------------------------------------------------------------
@@ -56,38 +69,70 @@
 #     # Exercise 5 : Let’s Create Some Personalized Shirts !
 #     # ----------------------------------------------------------------
 
-# def make_shirt(size, text):
+# #Update version
+# def make_shirt(size, text=""):
 #     print(f'The size of the shirt is {size} and the text is "{text}"')
 
 # make_shirt(38, "Nice size")
 # make_shirt(size="Large", text="I love Python")
 
 # make_shirt(size="Large", text="Don't buy it")
-# make_shirt(size="medium", text="Don't buy it")
-# make_shirt(size="small", text="Don't buy it")
+# make_shirt(size="Medium") 
+# make_shirt(size="Small")
+
+
+            # #Old version 
+            # def make_shirt(size, text):
+            #     print(f'The size of the shirt is {size} and the text is "{text}"')
+
+            # make_shirt(38, "Nice size")
+            # make_shirt(size="Large", text="I love Python")
+
+            # make_shirt(size="Large", text="Don't buy it")
+            # make_shirt(size="medium", text="Don't buy it")
+            # make_shirt(size="small", text="Don't buy it")
+
+
 
     # ----------------------------------------------------------------
     # Exercise 6 : Magicians …
     # ----------------------------------------------------------------
 
+# #Update version
 # magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
 
-# def show_magicians(magicians):
-#     for magician in magicians:
+# def show_magicians():
+#     for magician in magician_names:
 #         print(magician)
 
-# def make_great(magicians):
-#     great_magicians = []
-#     for magician in magicians:
-#         great_magician = "The Great " + magician
-#         great_magicians.append(great_magician)
-#     return great_magicians
+# def make_great():
+#     global magician_names
+#     magician_names = ["The Great " + magician for magician in magician_names]
+
+# make_great()
+# show_magicians()
 
 
-# show_magicians(magician_names)
 
-# great_magician_names = make_great(magician_names)
-# show_magicians(great_magician_names)
+                    # # old version
+                    # magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
+
+                    # def show_magicians(magicians):
+                    #     for magician in magicians:
+                    #         print(magician)
+
+                    # def make_great(magicians):
+                    #     great_magicians = []
+                    #     for magician in magicians:
+                    #         great_magician = "The Great " + magician
+                    #         great_magicians.append(great_magician)
+                    #     return great_magicians
+
+
+                    # show_magicians(magician_names)
+
+                    # great_magician_names = make_great(magician_names)
+                    # show_magicians(great_magician_names)
 
     # ----------------------------------------------------------------
     # Exercise 7 : Temperature Advice
