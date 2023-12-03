@@ -33,50 +33,70 @@
 # oldest_cat(oldest_cat_instance)
 
 
-#----------------------------------------------------------------
-#Exercise 2 : Dogs
-#----------------------------------------------------------------
+# #----------------------------------------------------------------
+# #Exercise 2 : Dogs
+# #----------------------------------------------------------------
 
 
-class Dog:
-    def __init__(self, dog_name, dog_height):
-        self.name = dog_name
-        self.height = dog_height
+# class Dog:
+#     def __init__(self, dog_name, dog_height):
+#         self.name = dog_name
+#         self.height = dog_height
       
+#     def bark(self):
+#         print(f"{self.name} barks goes woof!")
+
+#     def jump(self):
+#         jump_height = self.height * 2
+#         print(f"{self.name} jumps {jump_height} cm high!")
 
 
-    def bark(self):
-        print(f"{self.name} barks goes woof!")
+# print("\n")
+# davids_dog = Dog('Rex', 50)
+# sarahs_dog = Dog('Teacup', 20)
 
-    def jump(self):
-        jump_height = self.height * 2
-        print(f"{self.name} jumps {jump_height} cm high!")
+# print(f"Dog's name: {davids_dog.name}")
+# print(f"Dog's height: {davids_dog.height} cm")
 
+# davids_dog.bark()
+# davids_dog.jump()
+# print("\n")
+# print(f"Dog's name: {sarahs_dog.name}")
+# print(f"Dog's height: {sarahs_dog.height} cm")
 
-print("\n")
-davids_dog = Dog('Rex', 50)
-sarahs_dog = Dog('Teacup', 20)
-
-print(f"Dog's name: {davids_dog.name}")
-print(f"Dog's height: {davids_dog.height} cm")
-
-davids_dog.bark()
-davids_dog.jump()
-print("\n")
-print(f"Dog's name: {sarahs_dog.name}")
-print(f"Dog's height: {sarahs_dog.height} cm")
-
-sarahs_dog.bark()
-sarahs_dog.jump()
-print("\n")
+# sarahs_dog.bark()
+# sarahs_dog.jump()
+# print("\n")
 
 
-if davids_dog.height >sarahs_dog.height:
-    print(f"The biggest dog is: {davids_dog.name}")
-else:
-    print(f"The biggest dog is: {sarahs_dog.name}")
+# if davids_dog.height >sarahs_dog.height:
+#     print(f"The biggest dog is: {davids_dog.name}")
+# else:
+#     print(f"The biggest dog is: {sarahs_dog.name}")
 
 
+
+
+#----------------------------------------------------------------
+#Exercise 3 : Who’s The Song Producer?
+#----------------------------------------------------------------
+
+class Song:
+    def __init__(self, lyrics):
+        self.lyrics = lyrics
+    
+    def sing_me_a_song(self):
+        for line in self.lyrics:
+            print(line)
+
+stairway= Song(["There\'s a lady who's sure","all that glitters is gold", "and she\'s buying a stairway to heaven"])
+
+stairway.sing_me_a_song()
+
+
+#----------------------------------------------------------------
+#Exercise 4 : Afternoon At The Zoo
+#----------------------------------------------------------------
 
 
 
