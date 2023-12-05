@@ -161,6 +161,32 @@ ap_fn(num1, num2)"""
 # birth_minutes()
 
 
+# # #----------------------------------------------------------------
+# # # Exercise 7 : Faker Module
+# # #----------------------------------------------------------------
+
+from faker import Faker
+import random
+
+fake = Faker()
+users = []
+
+def gen_fake_user():
+    user = {
+        "name": fake.name(),
+        "address": fake.address(),
+        "language_code": random.choice(["en_US", "ru_RU", "he_IL"])
+    }
+    users.append(user)
+
+def gen_fake_users(num_users):
+    for _ in range(num_users):
+        gen_fake_user()
+
+gen_fake_users(5)
+
+for user in users:
+    print(user)
 
 
 
