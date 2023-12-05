@@ -1,5 +1,5 @@
 # #----------------------------------------------------------------
-# #Exercise 1: Currencies
+# # Exercise 1: Currencies
 # #----------------------------------------------------------------
 
 # class Currency:
@@ -9,11 +9,9 @@
 
 #     def __str__(self) -> str:
 #         return f"{self.amount} {self.currency}" + ('s' if self.amount != 1 else "")
-    
-#     def __int__(self) -> int:
+    #     def __int__(self) -> int:
 #         return self.amount
-    
-#     def __repr__(self) -> str:
+    #     def __repr__(self) -> str:
 #         return f"{self.amount} {self.currency}" + ('s' if self.amount != 1 else "")
     
 #     def __add__(self, other):
@@ -69,18 +67,16 @@
 # c1 + c3
 # print(c1) 
 
-
 # #----------------------------------------------------------------
-# #Exercise 2: Import
+# # Exercise 2: Import
 # #----------------------------------------------------------------
 
 
-from funk import add_and_print as fn
+# from funk import add_and_print as fn
 
-num1 = 5
-num2 = 7
-fn(num1, num2)
-
+# num1 = 5
+# num2 = 7
+# fn(num1, num2)
 
 
 """from funk import addandprint as ap_fn
@@ -89,14 +85,87 @@ num1 = 5
 num2 = 7
 
 ap_fn(num1, num2)"""
+   
 
+# #----------------------------------------------------------------
+# # Exercise 3: String Module
+# #----------------------------------------------------------------
 
-       
+# import random
+# import string
+
+# class Randomgenerator:
+#     def __init__(self, length) -> None:
+#         self.length = length
+    
+#     def __str__(self) -> str:
+#         letters = string.ascii_uppercase
+#         return "".join(random.choice(letters) for _ in range(length))
+    
+# length = 5
+# random_str = Randomgenerator(length)
+# print(random_str)
 
 
 # #----------------------------------------------------------------
-# #Exercise 3: String Module
+# # Exercise 4 : Current Date
 # #----------------------------------------------------------------
+
+# import datetime
+
+# def datetoday():
+#     today_date = datetime.date.today()
+#     print(f"Today is {today_date.strftime('%d/%m')}")
+
+# datetoday()
+
+
+# # #----------------------------------------------------------------
+# # # Exercise Exercise 5 : Amount Of Time Left Until January 1st
+# # #----------------------------------------------------------------
+
+# from datetime import datetime
+
+# def calculate_timedelta():
+#     current_date = datetime.now()
+#     first_jan_date = datetime(current_date.year + 1, 1, 1)
+#     time_difference = first_jan_date - current_date
+
+#     days = time_difference.days
+#     hours = time_difference.seconds // 3600
+#     minutes = (time_difference.seconds % 3600) // 60
+#     seconds = time_difference.seconds % 60
+
+#     result = f"The 1st of January is in {days} days and {hours:02}:{minutes:02}:{seconds:02} hours."
+#     print(result)
+
+
+# calculate_timedelta()
+
+# # #----------------------------------------------------------------
+# # # Exercise 6 : Birthday And Minutes
+# # #----------------------------------------------------------------
+
+# from datetime import datetime
+
+# def birth_minutes():
+#     current_date = datetime.now()
+#     birthday = datetime(1984, 3, 23)
+
+#     time_difference = current_date - birthday
+#     minutes = (time_difference.days * 24 * 60)
+#     formatted_minutes = "{:,}".format(minutes)
+
+#     print(f"The user lived in his life {formatted_minutes} minutes.")
+
+# birth_minutes()
+
+
+
+
+
+
+
 
 
 
