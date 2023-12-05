@@ -1,3 +1,4 @@
+
 # #----------------------------------------------------------------
 # #Daily Challenge: Old MacDonald’s Farm
 # #----------------------------------------------------------------
@@ -26,6 +27,3 @@ macdonald.add_animal('goat', 12)
 macdonald.display_animals()
 print(macdonald.get_info())
 print("E-I-E-I-0!")
-
-
-
