@@ -98,53 +98,53 @@
 #Exercise 4 : Afternoon At The Zoo
 #----------------------------------------------------------------
 
-class Zoo:
-    def __init__(self, zoo_name, animals=None) -> None:
-        self.name = zoo_name
-        self.animals = animals if animals is not None else []
+# class Zoo:
+#     def __init__(self, zoo_name, animals=None) -> None:
+#         self.name = zoo_name
+#         self.animals = animals if animals is not None else []
 
-    def add_animal(self, new_animal):
-        self.animals.append(new_animal)
+#     def add_animal(self, new_animal):
+#         self.animals.append(new_animal)
 
-    def get_animals(self):
-        print(f"All the animals of the zoo {self.name}: {self.animals}")
+#     def get_animals(self):
+#         print(f"All the animals of the zoo {self.name}: {self.animals}")
 
-    def sell_animals(self, animal_sold):
-        if animal_sold > len(self.animals):
-            print("You don't have enough animals to sell.")
-        else:
-            sold_animals = self.animals[:animal_sold]
-            self.animals = self.animals[animal_sold:]
-            print(f"Sold {animal_sold} animals: {sold_animals}")
+#     def sell_animals(self, animal_sold):
+#         if animal_sold > len(self.animals):
+#             print("You don't have enough animals to sell.")
+#         else:
+#             sold_animals = self.animals[:animal_sold]
+#             self.animals = self.animals[animal_sold:]
+#             print(f"Sold {animal_sold} animals: {sold_animals}")
 
 
-    def sort_animals(self):
-        return sorted(self.animals)
+#     def sort_animals(self):
+#         return sorted(self.animals)
 
-    def get_groups(self):
-        sorted_animals = self.sort_animals()
+#     def get_groups(self):
+#         sorted_animals = self.sort_animals()
 
-        print("Animals grouped by the first letter:")
-        current_group = [sorted_animals[0]]
+#         print("Animals grouped by the first letter:")
+#         current_group = [sorted_animals[0]]
 
-        for animal in sorted_animals[1:]:
-            if animal[0].upper() == current_group[0][0].upper():
-                current_group.append(animal)
-            else:
-                print(current_group)
-                current_group = [animal]
+#         for animal in sorted_animals[1:]:
+#             if animal[0].upper() == current_group[0][0].upper():
+#                 current_group.append(animal)
+#             else:
+#                 print(current_group)
+#                 current_group = [animal]
 
-        print(current_group)
+#         print(current_group)
 
-ramat_gan_safari = Zoo("Ramat Gan Safari")
+# ramat_gan_safari = Zoo("Ramat Gan Safari")
 
-ramat_gan_safari.add_animal("Giraffe")
-ramat_gan_safari.add_animal("Lion")
-ramat_gan_safari.add_animal("Zebra")
-ramat_gan_safari.add_animal("Elephant")
+# ramat_gan_safari.add_animal("Giraffe")
+# ramat_gan_safari.add_animal("Lion")
+# ramat_gan_safari.add_animal("Zebra")
+# ramat_gan_safari.add_animal("Elephant")
 
-ramat_gan_safari.get_animals()
-ramat_gan_safari.get_groups()
+# ramat_gan_safari.get_animals()
+# ramat_gan_safari.get_groups()
 
         
 
