@@ -48,7 +48,7 @@
 # #----------------------------------------------------------------
 
 class Dog:
-    def __init__(self, dog_name, dog_age, dog_weight) -> None:
+    def __init__(self, dog_name, dog_age, dog_weight):
         self.name = dog_name
         self.age = dog_age
         self.weight = dog_weight
