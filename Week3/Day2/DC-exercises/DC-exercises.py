@@ -20,8 +20,7 @@ class Pagination():
                              
     def nextPage(self):
         if self.current_page == self.total_pages:
-
-        self.current_page += 1
+            self.current_page += 1
         return self.current_page
 
     def firstPage(self):
