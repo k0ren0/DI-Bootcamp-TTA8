@@ -6,41 +6,50 @@
 import math
 
 class Circle:
-    def __init__(self, radius=None, diameter=None):
-        if radius is not None:
-            self.radius = radius
-        elif diameter is not None:
-            self.radius = diameter / 2
-        else:
-            raise ValueError("Set either radius or diameter")
+    def __init__(self, radius, diameter) -> None:
+        self.radius = radius
+        self.diameter = diameter
+
+    @classmethod
+    def from_radius(cls, radius):
+        return cls(radius=radius, diameter=radius * 2)
+
+    @classmethod
+    def from_diameter(cls, diameter):
+        return cls(radius=diameter / 2, diameter=diameter)
 
     def get_diameter(self):
         return self.radius * 2
-    # Method to calculate and return the area.
-    def get_area(self):
-        return math.pi * (self.radius ** 2)
 
-    # Method to provide a string representation of the circle.
+    def area(self):
+        return math.pi * (self.radius**2)
+
     def __str__(self):
         return f"Circle with radius: {self.radius}"
 
-    # Dunder method to add two circles and return a new circle.
     def __add__(self, other):
         return Circle(radius=self.radius + other.radius)
 
-    # Dunder method to compare two circles and check if one is smaller.
     def __lt__(self, other):
         return self.radius < other.radius
 
-    # Dunder method to compare two circles and check if they are equal.
     def __eq__(self, other):
         return self.radius == other.radius
+    
+    def sort_circles(self, circles):
+        circles.append(self)
+        result = sorted(circles, key=lambda x: x.radius)
+        return result
 
-circle1 = Circle(radius=3)
-circle2 = Circle(diameter=10)
+# Example usage:
+circle1 = Circle.from_radius(10)
+circle2 = Circle.from_diameter(50)
+
+# print(circle2.diameter)
+# print(circle1.radius)
 
 print(circle1.diameter)  
-print(circle2.area)      
+print(circle2.area())     
 print(circle1)           
 
 circle3 = circle1 + circle2
@@ -50,12 +59,12 @@ print(circle1 < circle2)
 print(circle1 == circle2)
 
 circles = [circle1, circle2, circle3]
-sorted_circles = sorted(circles, key=lambda x: x.radius)
 
-for circle in sorted_circles:
-    print(circle)
+s_circles = circle1.sort_circles(circles)
+print(s_circles)
 
-
+for c in s_circles:
+    print(c.diameter)
 
 # #----------------------------------------------------------------
 # #Daily Challenge: Translator
