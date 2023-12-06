@@ -146,47 +146,51 @@ ap_fn(num1, num2)"""
 # # # Exercise 6 : Birthday And Minutes
 # # #----------------------------------------------------------------
 
-# from datetime import datetime
+# from datetime import datetime, timedelta
 
 # def birth_minutes():
 #     current_date = datetime.now()
 #     birthday = datetime(1984, 3, 23)
+    
+#     delta = current_date - birthday
+#     formatted_minutes = round(delta.total_seconds() / 60)
+ 
 
-#     time_difference = current_date - birthday
-#     minutes = (time_difference.days * 24 * 60)
-#     formatted_minutes = "{:,}".format(minutes)
-
-#     print(f"The user lived in his life {formatted_minutes} minutes.")
+#     print(f"The user lived in his life {formatted_minutes:,} minutes.")
 
 # birth_minutes()
 
+
+"""   # time_difference = current_date - birthday
+    # minutes = (time_difference.days * 24 * 60)
+    # formatted_minutes = "{:,}".format(minutes)"""
 
 # # #----------------------------------------------------------------
 # # # Exercise 7 : Faker Module
 # # #----------------------------------------------------------------
 
-from faker import Faker
-import random
+# from faker import Faker
+# import random
 
-fake = Faker()
-users = []
+# fake = Faker()
+# users = []
 
-def gen_fake_user():
-    user = {
-        "name": fake.name(),
-        "address": fake.address(),
-        "language_code": random.choice(["en_US", "ru_RU", "he_IL"])
-    }
-    users.append(user)
+# def gen_fake_user():
+#     user = {
+#         "name": fake.name(),
+#         "address": fake.address(),
+#         "language_code": random.choice(["en_US", "ru_RU", "he_IL"])
+#     }
+#     users.append(user)
 
-def gen_fake_users(num_users):
-    for _ in range(num_users):
-        gen_fake_user()
+# def gen_fake_users(num_users):
+#     for _ in range(num_users):
+#         gen_fake_user()
 
-gen_fake_users(5)
+# gen_fake_users(5)
 
-for user in users:
-    print(user)
+# for user in users:
+#     print(user)
 
 
 
