@@ -83,5 +83,110 @@ WHERE id = 3;
 
 
 
+--  -- Exercise 2 : DVD Rental
+
+-- -- 1
+SELECT * FROM film
+
+UPDATE film 
+SET language_id = (
+    SELECT language_id
+    FROM language
+    WHERE name IN ('Mandarin', 'French', 'German')
+    ORDER BY RANDOM()
+    LIMIT 1
+)
+WHERE film_id IN (
+    SELECT film_id
+    FROM film
+    ORDER BY RANDOM()
+    LIMIT 10
+);
+
+-- -- 2
+
+-- To find the foreign keys in the customer table, check the table definition or use the following query:
+
+SELECT conname AS foreign_key_name
+FROM pg_constraint
+WHERE confrelid = 'customer'::regclass;
+
+
+-- -- 3
+
+-- Dropping the "customer_review" table in PostgreSQL is a standard operation, but ensure data isn't needed and perform a backup before proceeding. You can use:
+
+DROP TABLE IF EXISTS customer_review;
+
+-- -- 4
+
+-- SELECT * FROM rental
+
+SELECT COUNT(*)
+FROM rental
+WHERE return_date IS NULL;
+
+-- -- 5
+
+-- SELECT * FROM inventory
+-- SELECT * FROM rental
+
+SELECT title, replacement_cost
+FROM film
+WHERE film_id IN (
+    SELECT film_id
+    FROM rental
+    WHERE return_date IS NULL
+)
+ORDER BY replacement_cost DESC
+LIMIT 30;
+
+-- -- 6
+
+-- Fist film
+
+SELECT * FROM film
+SELECT * FROM category
+SELECT * FROM actor
+
+SELECT f.title, f.description, f.fulltext, c.name
+FROM film f
+JOIN film_category fc ON f.film_id = fc.film_id
+JOIN category c ON fc.category_id = c.category_id
+JOIN film_actor fa ON f.film_id = fa.film_id
+JOIN actor a ON fa.actor_id = a.actor_id
+WHERE c.name = 'Sports'
+    AND a.first_name = 'Penelope' AND a.last_name = 'Monroe';
+
+-- Second film
+
+SELECT title, description
+FROM film
+WHERE length < '60' AND rating = 'R';
+
+-- Third film
+
+SELECT f.title, r.rental_date, r.return_date, r.rental_rate
+FROM rental r
+JOIN film f ON r.film_id = f.film_id
+JOIN customer c ON r.customer_id = c.customer_id
+WHERE c.first_name = 'Matthew' AND c.last_name = 'Mahan'
+  AND r.rental_rate > 4.00
+  AND r.return_date BETWEEN '2005-07-28' AND '2005-08-01';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
