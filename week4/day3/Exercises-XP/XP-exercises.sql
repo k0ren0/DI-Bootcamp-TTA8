@@ -145,9 +145,9 @@ LIMIT 30;
 
 -- Fist film
 
-SELECT * FROM film
-SELECT * FROM category
-SELECT * FROM actor
+-- SELECT * FROM film
+-- SELECT * FROM category
+-- SELECT * FROM actor
 
 SELECT f.title, f.description, f.fulltext, c.name
 FROM film f
@@ -166,13 +166,36 @@ WHERE length < '60' AND rating = 'R';
 
 -- Third film
 
-SELECT f.title, r.rental_date, r.return_date, r.rental_rate
-FROM rental r
-JOIN film f ON r.film_id = f.film_id
-JOIN customer c ON r.customer_id = c.customer_id
-WHERE c.first_name = 'Matthew' AND c.last_name = 'Mahan'
-  AND r.rental_rate > 4.00
+SELECT * FROM film
+SELECT * FROM rental
+SELECT * FROM customer
+
+SELECT f.title, r.rental_date, r.return_date
+FROM film f
+JOIN inventory i ON f.film_id = i.film_id
+JOIN rental r ON i.inventory_id = r.inventory_id
+JOIN customer cu ON r.customer_id = cu.customer_id
+WHERE cu.first_name = 'Matthew'
+ AND cu.last_name = 'Mahan'
+  AND f.rental_rate > 4.00
   AND r.return_date BETWEEN '2005-07-28' AND '2005-08-01';
+
+-- Fourth film
+
+SELECT film.title, film.description, film.replacement_cost, customer.first_name || ' '|| customer.last_name AS full_name
+FROM film
+JOIN inventory ON film.film_id = inventory.film_id
+JOIN rental ON inventory.inventory_id = rental.inventory_id
+JOIN customer ON rental.customer_id = customer.customer_id
+WHERE (LOWER(film.title) LIKE '%boat%' OR LOWER(film.description) LIKE '%boat%')
+  AND customer.first_name = 'Matthew' AND customer.last_name = 'Mahan'
+ORDER BY film.replacement_cost DESC;
+
+
+
+
+
+
 
 
 
