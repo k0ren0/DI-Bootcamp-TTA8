@@ -1,5 +1,6 @@
 import psycopg2
 
+
 # Establish a connection
 conn = psycopg2.connect(
     dbname='gnijujni',
@@ -9,6 +10,7 @@ conn = psycopg2.connect(
     port=5432
 )
 
+## 
 # Create a cursor object to execute SQL queries
 cur = conn.cursor()
 
