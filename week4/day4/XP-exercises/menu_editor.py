@@ -11,12 +11,12 @@ def show_user_menu():
     print("E - Exit Program")
 
 def add_item_to_menu(conn):
-    name = input("Enter the item's name: ")
-    price = float(input("Enter the item's price: "))
+    item_name = input("Enter the item's name: ")
+    item_price = float(input("Enter the item's price: "))
     
-    item = MenuItem(conn, name, price)
+    item = MenuItem(item_name, item_price, conn)
     item.save()
-    print(f"Item '{name}' was added successfully.")
+    print(f"Item '{item_name}' was added successfully.")
 
 def show_restaurant_menu(conn):
     menu = MenuManager.all_items(conn)

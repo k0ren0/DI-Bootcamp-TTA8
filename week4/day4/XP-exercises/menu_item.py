@@ -9,29 +9,30 @@ conn = psycopg2.connect(
 )
 
 class MenuItem:
-    def __init__(self, item_name, item_price) -> None:
-        self.name = item_name
-        self.price = item_price
-        self.cursor = conn.cursor()
+    def __init__(self, item_name, item_price, conn) -> None:
+        self.item_name = item_name
+        self.item_price = item_price
+        self.conn = conn
+        self.cursor = self.conn.cursor()
 
     def save(self):
         self.cursor.execute("""
             INSERT INTO Menu_Items (item_name, item_price) VALUES (%s, %s);
-        """, (self.name, self.price))
+        """, (self.item_name, self.item_price))
 
         conn.commit()
 
     def delete(self):
         self.cursor.execute("""
             DELETE FROM Menu_Items WHERE item_name = %s;
-        """, (self.name,))
+        """, (self.item_name,))
 
         conn.commit()
 
     def update(self, new_name, new_price):
         self.cursor.execute("""
             UPDATE Menu_Items SET item_name = %s, item_price = %s WHERE item_name = %s;
-        """, (new_name, new_price, self.name))
+        """, (new_name, new_price, self.item_name))
 
         conn.commit()
 
@@ -42,18 +43,18 @@ class MenuItem:
         for item in items:
             print(item)
 
-item = MenuItem('Cheeseburger', 8.99)
-#1
-item.save()
-item.display_all()
+# item = MenuItem('Cheeseburger', 8.99)
+# #1
+# item.save()
+# item.display_all()
 
-#2
-item.update('Cheeseburger', 9.49)
-item.display_all()
+# #2
+# item.update('Cheeseburger', 9.49)
+# item.display_all()
 
-#3
-item.delete()
-item.display_all()
+# #3
+# item.delete()
+# item.display_all()
 
-item.cursor.close()
-conn.close()
+# def close_cursor(self):
+#     self.cursor.close()

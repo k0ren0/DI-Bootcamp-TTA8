@@ -35,10 +35,10 @@ class MenuManager:
         finally:
             conn.close()
 
-item_name = "Cheeseburger"
-result = MenuManager.get_by_name(item_name)
+# item_name = "Cheeseburger"
+# result = MenuManager.get_by_name(item_name)
 
-if result:
-    print(f"Item found: {result}")
-else:
-    print(f"No item found with name '{item_name}'")
+# if result:
+#     print(f"Item found: {result}")
+# else:
+#     print(f"No item found with name '{item_name}'")
