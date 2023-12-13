@@ -8,6 +8,15 @@
             "name": "DVDrental",
             "username": "postgres",
             "database": "dvdrental"
+        },
+        {
+            "previewLimit": 50,
+            "server": "berry.db.elephantsql.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "zbekinjp",
+            "database": "zbekinjp",
+            "username": "zbekinjp"
         }
     ]
 }
