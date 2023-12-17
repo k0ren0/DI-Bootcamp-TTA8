@@ -16,7 +16,7 @@ def get_country_data():
 ##If I want to see only 10 countries
 # cursor.execute("DROP TABLE IF EXISTS countries CASCADE")
     
-# PostgreSQL table
+# Create PostgreSQL table
 def create_table(cursor):
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS countries (
@@ -60,14 +60,13 @@ def main():
         )
 
         cursor = conn.cursor()
+        
+        create_table(cursor) # Create the table if it doesn't exist
 
-        # Create the table if it doesn't exist
-        create_table(cursor)
+        
+        insert_country_data(cursor, countries_data) # Insert random country data into the table
 
-        # Insert random country data into the table
-        insert_country_data(cursor, countries_data)
-
-        # Commit and close the connection
+        # Commit and close the conn
         conn.commit()
         conn.close()
 
