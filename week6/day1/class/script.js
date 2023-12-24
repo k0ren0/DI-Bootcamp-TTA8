@@ -159,3 +159,82 @@
 
 // delete person.favoriteFood;
 // console.log(person);
+
+// // Нечетные
+// const numbers = [2, 7, 19, 22, 38, 9];
+
+
+// let i = 0;
+// while (i < numbers.length) {
+//     if (i % 2 !== 0) {
+//         numbers[i] *= 2;
+//     }
+//     i++;
+// }
+
+// console.log(numbers);
+
+
+// // Четные
+// const numbers = [1, 2, 3, 4, 5, 6];
+
+
+// for (let i = 0; i < numbers.length; i++) {
+//     if (i % 2 === 0) {
+//         numbers[i] += 3;
+//     }
+// }
+
+// console.log(numbers);
+
+
+// let i = 0;
+// do {
+//   console.log("The number is " + i)
+//   i++;
+// }
+// while (i < 10);
+
+// for (let i = 0; i <= 10; i++) {
+//     console.log(i);
+// }
+
+// console.log()
+
+
+// for (let i = 0; i <= 10; i++) {
+//     console.log(i);
+// }
+
+// let arr = [1, 4, 7, 10]
+//     for (let i=0; i<arr.length; i++) {
+//         console.log(arr[i]);
+//     }
+
+
+// let person = {fname:"John", lname:"Doe", age:25};
+// for (let x in person) {
+//   console.log(x) //fname lname age
+//   console.log(person[x]) // John Doe 25
+// }
+
+
+// let colors = ["blue", "yellow", "red"];
+
+// for (let i in colors) {
+//    console.log(i); //0 1 2
+//    console.log(colors[i]) //blue yellow red
+// }
+
+// let colors = ["blue", "yellow", "red"];
+
+// for (let i of colors) {
+//    console.log(i); // logs blue, yellow, red
+// }
+
+function multiply(a, b, c) {
+    return a * b * c;
+}
+
+let result = multiply(2, 3, 4);
+console.log(result); 
