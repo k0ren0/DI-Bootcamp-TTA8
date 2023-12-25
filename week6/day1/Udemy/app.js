@@ -55,32 +55,32 @@
 // result = (a + b < 4) ? "Мало" : "Много";
 // console.log({result});
 
-const spainCapital = 'Valencia';
-let isCorrectAnswer;
+// const spainCapital = 'Valencia';
+// let isCorrectAnswer;
 
-switch (spainCapital) {
-    case 'Madrid':
-    case 'madrid':
-    case 'MADRID':
-        isCorrectAnswer = true;
-        console.log("true");
-        break;
-    default:
-        isCorrectAnswer = false;
-        console.log("false");
-}
+// switch (spainCapital) {
+//     case 'Madrid':
+//     case 'madrid':
+//     case 'MADRID':
+//         isCorrectAnswer = true;
+//         console.log("true");
+//         break;
+//     default:
+//         isCorrectAnswer = false;
+//         console.log("false");
+// }
 
-//  или вот так
+// //  или вот так
 
-switch (spainCapital.toLowerCase()) {
-    case "madrid":
-        isCorrectAnswer = true;
-        console.log("true");
-        break;
-    default:
-        isCorrectAnswer = false;
-        console.log("false");
-}
+// switch (spainCapital.toLowerCase()) {
+//     case "madrid":
+//         isCorrectAnswer = true;
+//         console.log("true");
+//         break;
+//     default:
+//         isCorrectAnswer = false;
+//         console.log("false");
+// }
 
 
 // // или сразу без рассчета

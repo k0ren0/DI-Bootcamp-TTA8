@@ -232,9 +232,9 @@
 //    console.log(i); // logs blue, yellow, red
 // }
 
-function multiply(a, b, c) {
-    return a * b * c;
-}
+// function multiply(a, b, c) {
+//     return a * b * c;
+// }
 
-let result = multiply(2, 3, 4);
-console.log(result); 
+// let result = multiply(2, 3, 4);
+// console.log(result); 
