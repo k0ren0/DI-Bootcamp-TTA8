@@ -103,7 +103,7 @@
 // }, 3000);
 
 //Exercise1
-const div = document.querySelector("div");
+// const div = document.querySelector("div");
 // console.log(div);
 
 // setTimeout(function () {
@@ -134,15 +134,15 @@ const div = document.querySelector("div");
 // }, 1000);
 
 //Animation
-const child = document.getElementById("child");
+// const child = document.getElementById("child");
 
-let pos = 0;
-let id = setInterval(function () {
-  if (pos != 400) {
-    pos++;
-    child.style.left = pos + "px";
-    child.style.top = pos + "px";
-  } else {
-    clearInterval(id);
-  }
-}, 10);
+// let pos = 0;
+// let id = setInterval(function () {
+//   if (pos != 400) {
+//     pos++;
+//     child.style.left = pos + "px";
+//     child.style.top = pos + "px";
+//   } else {
+//     clearInterval(id);
+//   }
+// }, 10);

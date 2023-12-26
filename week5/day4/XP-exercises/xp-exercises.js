@@ -185,3 +185,15 @@
 // secretSociety = secretSociety.split('').sort().join('');
 
 // console.log("The name of the secret society:", secretSociety);
+
+
+// OR
+// const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+// console.log(names.sort())
+// let namesFirst = ""
+//     for (let x of names) {
+//         console.log(x[0]);
+//         namesFirst = namesFirst + x[0];
+//     }
+// console.log(namesFirst);
+

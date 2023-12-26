@@ -72,5 +72,84 @@
 // console.log("Remaining stock:", stock);
 
 
-// Exercise 3 : What’s In My Wallet ?
+// // Exercise 3 : What’s In My Wallet ?
 
+
+// function changeEnough(itemPrice, amountOfChange) {
+
+//   let total = (amountOfChange[0] * 0.25) + (amountOfChange[1] * 0.10) + (amountOfChange[2] * 0.05) + (amountOfChange[3] * 0.01);
+
+//   return total >= itemPrice;
+// }
+
+// let result = changeEnough(4.25, [25, 20, 5, 0]);
+// console.log(result);
+
+// let result1 = changeEnough(14.11, [2,100,0,0]);
+// console.log(result1);
+
+// let result2 = changeEnough(0.75, [0,0,20,5]);
+// console.log(result2);
+
+// // Exercise 4 : Vacations Costs
+
+// const readlineSync = require('readline-sync');
+
+// function hotelCost() {
+//   let nights;
+
+//   while (true) {
+//     nights = parseInt(prompt("Enter quontity of nights in the hotel:"));
+
+//     if (!isNaN(nights) && nights > 0) {
+//       return nights * 140; 
+//     } else {
+//       alert("Please enter quontity of nights.");
+//     }
+//   }
+// }
+
+// // Cost
+// function planeRideCost() {
+//   let destination = prompt("Enter your destination:");
+
+//   switch (destination.toLowerCase()) {
+//     case 'london':
+//       return 183;
+//     case 'paris':
+//       return 220;
+//     default:
+//       return 300;
+//   }
+// }
+
+// // Rental car cost
+// function rentalCarCost() {
+//   let days = parseInt(prompt("Enter the number of days for car rental:"));
+
+//   let cost = days * 40; // price per day
+
+//   if (days > 10) {
+//     cost *= 0.95; // discount
+//   }
+
+//   return cost;
+// }
+
+// // Total vacation cost
+// function totalVacationCost() {
+//   let hotelCostValue = hotelCost();
+//   let planeRideCostValue = planeRideCost();
+//   let rentalCarCostValue = rentalCarCost();
+
+//   let totalCost = hotelCostValue + planeRideCostValue + rentalCarCostValue;
+
+//   return `Hotel cost: $${hotelCostValue}, plane tickets cost: $${planeRideCostValue}, car rental cost: $${rentalCarCostValue}. Total cost: $${totalCost}.`;
+// }
+
+// // Call the function
+// let vacationCostSummary = totalVacationCost();
+// console.log(vacationCostSummary);
+
+
+// Exercise 5 : Users

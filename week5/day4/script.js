@@ -239,11 +239,13 @@
 // let result = multiply(2, 3, 4);
 // console.log(result); 
 
-let person= {
-    firstName : "Sarah",
-    eyeColor: "blue",
-    eat : function () {
-        console.log("My name is" + this.firstName + "I love chocolate")
-    }
-}
+// let person= {
+//     firstName : "Sarah",
+//     eyeColor: "blue",
+//     eat : function () {
+//         console.log("My name is" + this.firstName + "I love chocolate")
+//     }
+// }
+
+
 
