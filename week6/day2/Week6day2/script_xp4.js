@@ -1,73 +1,44 @@
-// Шаг 1: Объявите глобальную переменную с именем allBoldItems
-let allBoldItems;
+// Получаем ссылку на форму по её идентификатору "MyForm"
+document.getElementById("MyForm").addEventListener("submit", function (event) {
+    // Предотвращаем стандартное поведение формы (отправку и перезагрузку страницы)
+    event.preventDefault();
 
-// Шаг 2: Создайте функцию с именем getBoldItems
-function getBoldItems() {
-  // Шаг 3: Получите элемент параграфа
-  const paragraph = document.querySelector('p');
+    // Получаем значение радиуса из поля ввода
+    const radius = parseFloat(document.getElementById("radius").value);
 
-  // Шаг 4: Получите все элементы жирного текста внутри параграфа
-  const boldElements = paragraph.querySelectorAll('strong');
+    // Проверяем, является ли введенное значение числом
+    if (!isNaN(radius)) {
+        // Рассчитываем объем сферы по формуле: V = (4/3) * π * r^3
+        const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
 
-  // Шаг 5: Преобразуйте текст каждого элемента жирного текста в массив
-  const boldTexts = Array.from(boldElements).map(element => element.textContent);
+        // Отображаем рассчитанный объем в поле ввода для объема, округленный до двух десятичных знаков
+        document.getElementById("volume").value = volume.toFixed(2);
+    } else {
+        // В случае некорректного ввода (не числа) выводим предупреждение
+        alert("Пожалуйста, введите корректное число для радиуса.");
+    }
+});
 
-  // Шаг 6: Присвойте массив текстов жирного текста глобальной переменной allBoldItems
-  allBoldItems = boldTexts;
-}
+// Пояснения:
+// document.getElementById("MyForm").addEventListener("submit", function (event) { ... }:
 
-// Шаг 7: Создайте функцию highlight
-function highlight() {
-  // Шаг 8: Получите все жирные элементы
-  const boldElements = document.querySelectorAll('strong');
+// Этот код добавляет слушатель события "submit" на форму с идентификатором "MyForm".
+// Функция, переданная вторым аргументом, будет выполнена при отправке формы.
+// event.preventDefault();:
 
-  // Шаг 9: Измените цвет текста всех жирных элементов на синий
-  boldElements.forEach(element => {
-    element.style.color = 'blue';
-  });
-}
+// Этот вызов предотвращает стандартное поведение формы, так что она не отправляет данные и не перезагружает страницу.
+// const radius = parseFloat(document.getElementById("radius").value);:
 
-// Шаг 10: Создайте функцию returnItemsToDefault
-function returnItemsToDefault() {
-  // Шаг 11: Получите все жирные элементы
-  const boldElements = document.querySelectorAll('strong');
+// Получаем значение радиуса из поля ввода с идентификатором "radius".
+// if (!isNaN(radius)) { ... } else { ... }:
 
-  // Шаг 12: Измените цвет текста всех жирных элементов на черный
-  boldElements.forEach(element => {
-    element.style.color = 'black';
-  });
-}
+// Проверяем, является ли введенное значение числом.
+// const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);:
 
-// Шаг 13: Вызовите функцию getBoldItems
-getBoldItems();
+// Если значение радиуса корректно, рассчитываем объем сферы по формуле (4/3) * π * r^3.
+// document.getElementById("volume").value = volume.toFixed(2);:
 
-// Шаг 14: Выведите результат в консоль
-console.log(allBoldItems);
+// Отображаем рассчитанный объем в поле ввода для объема, округленный до двух десятичных знаков.
+// alert("Пожалуйста, введите корректное число для радиуса.");:
 
-// Шаг 15: Добавьте событие mouseover для вызова функции highlight
-const paragraph = document.querySelector('p');
-paragraph.addEventListener('mouseover', highlight);
-
-// Шаг 16: Добавьте событие mouseout для вызова функции returnItemsToDefault
-paragraph.addEventListener('mouseout', returnItemsToDefault);
-
-
-// Итак, давайте разберем каждый шаг более подробно:
-
-// 1. getBoldItems функция:
-// document.querySelector('p') - Получаем ссылку на элемент параграфа в DOM.
-// paragraph.querySelectorAll('strong') - Получаем все элементы <strong> внутри параграфа.
-// Array.from(boldElements).map(element => element.textContent) - Преобразуем NodeList в массив и извлекаем текст из каждого элемента <strong>.
-// allBoldItems = boldTexts - Присваиваем массив текстов переменной allBoldItems.
-// 2. highlight функция:
-// document.querySelectorAll('strong') - Получаем все элементы <strong> внутри параграфа.
-// boldElements.forEach(element => element.style.color = 'blue') - Изменяем цвет текста всех жирных элементов на синий.
-// 3. returnItemsToDefault функция:
-// document.querySelectorAll('strong') - Получаем все элементы <strong> внутри параграфа.
-// boldElements.forEach(element => element.style.color = 'black') - Изменяем цвет текста всех жирных элементов на черный.
-// 4. События mouseover и mouseout:
-// paragraph.addEventListener('mouseover', highlight) - Добавляем слушатель события mouseover (наведение мыши на параграф), который вызывает функцию highlight.
-// paragraph.addEventListener('mouseout', returnItemsToDefault) - Добавляем слушатель события mouseout (вывод мыши из параграфа), который вызывает функцию returnItemsToDefault.
-// 5. console.log(allBoldItems):
-// Выводит массив текстов жирных элементов в консоль браузера при загрузке страницы.
-// Таким образом, код выполняет следующие шаги: при загрузке страницы получает тексты всех жирных элементов и сохраняет их в переменной allBoldItems. При наведении мыши на параграф тексты становятся синими, а при выводе мыши из параграфа возвращаются к черному цвету.
+// Если введено некорректное значение (не число), выводим предупреждение с помощью alert.
