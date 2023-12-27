@@ -10,12 +10,38 @@ const groceries = {
     }
 }
 
-// for (let fruit of groceries.fruits) {
-//     console.log(fruit)
-// };
+const displayGroceries = () => {
+    groceries.fruits.forEach((fruit) => {
+        console.log(fruit);
+    });
+};
+displayGroceries();
 
-groceries.fruits.forEach((fruit) => {
-    console.log(fruit);
-});
+const cloneGroceries = () => {
+    const clonedGroceries = { ...groceries };
+    let user = client;
+    let shopping = groceries;
+    return { clonedGroceries, user, shopping };
+}
+
+const { clonedGroceries, user, shopping } = cloneGroceries();
+
+console.log("User:", user);
+
+client = "Betty";
+
+console.log("Modified Client:", client);
+console.log("User after modification:", user);
+
+clonedGroceries.totalPrice = "35$";
+console.log("Modified Cloned Groceries:", clonedGroceries);
+console.log("Shopping after modifying cloned groceries:", shopping); // Yes, we will see the modification in the shopping object. They share the same reference to the original object.
+
+clonedGroceries.other.paid = false;
+console.log("Modified Cloned Groceries:", clonedGroceries);
+console.log("Shopping after modifying cloned groceries:", shopping); 
+
+
+
 
 
