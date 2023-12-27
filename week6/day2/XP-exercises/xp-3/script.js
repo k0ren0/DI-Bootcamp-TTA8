@@ -1,22 +1,46 @@
 // // Exercise 3 : Transform The Sentence
 
+// 1
+
 let allBoldItems;
 
+// 2
 function getBoldItems() {
+  const paragraph = document.querySelector('p');
+  
+  const boldElS = paragraph.querySelectorAll('strong');
 
-  // Получаем все элементы абзаца (предположим, что у вас есть элемент с id "myParagraph")
-  const paragraph = document.getElementById("myParagraph");
+  const boldTexts = Array.from(boldElS).map(element => element.textContent);
 
-  // Получаем все жирные элементы внутри абзаца
-  const boldItems = paragraph.querySelectorAll("strong, b");
-
-  // Преобразуем NodeList в массив и получаем текст из каждого элемента
-  const boldItemsText = Array.from(boldItems).map(item => item.textContent);
-
-  // Присваиваем полученные тексты переменной allBoldItems
-  allBoldItems = boldItemsText;
+  allBoldItems = boldTexts;
 }
 
-// Пример использования
 getBoldItems();
 console.log(allBoldItems);
+
+// 3
+function highlight() {
+    const boldElements = document.querySelectorAll('strong');
+  
+    boldElements.forEach(element => {
+      element.style.color = 'blue';
+    });
+  }
+
+highlight();
+
+// 4
+function returnItemsToDefault() {
+    
+    const boldElements = document.querySelectorAll('strong');
+  
+    boldElements.forEach(element => {
+      element.style.color = 'black';
+    });
+  }
+
+// 5
+const paragraph = document.querySelector('p');
+paragraph.addEventListener('mouseover', highlight);
+
+paragraph.addEventListener('mouseout', returnItemsToDefault);
