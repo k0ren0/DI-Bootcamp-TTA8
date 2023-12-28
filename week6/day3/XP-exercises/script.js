@@ -121,5 +121,62 @@
 // console.log(kgToGramsDeclaration());
 
 
+// // Exercise 6 : Fortune Teller
+
+// (function(numberOfChildren, partnerName, geographicLocation, jobTitle) {
+//     const sentence = `You will be a ${jobTitle} in ${geographicLocation}, and married to ${partnerName} with ${numberOfChildren} kids.`;
+    
+//     // Display in the DOM (assuming there's an element with the id "output")
+//     document.getElementById("output").textContent = sentence;
+// })(2, "Alice", "New York", "Software Developer");
+
+
+// // // Exercise 7 : Welcome
+
+// (function() {
+//     const user = {
+//       name: "John Doe",
+//       profilePicture: "./1487826.jpg"
+//     };
+  
+//     const Div = document.createElement("div");
+//     Div.innerHTML = `
+//       <p>Welcome, ${user.name}!</p>
+//       <img src="${user.profilePicture}" alt="Profile Picture">
+//     `;
+  
+//     const navbar = document.getElementById("navbar");
+//     navbar.appendChild(Div);
+//   })();
+  
+
+
+// // Exercise 8 : Juice Bar
+// const container = document.getElementById("container");
+
+// function makeShake(size) {
+//   const ingredients = [];
+
+//   function addIngredients(ingr1, ingr2, ingr3) {
+//     container.innerText = `The client wants a ${size} shake, containing ${ingr1}, ${ingr2}, ${ingr3}`;
+//     ingredients.push(ingr1, ingr2, ingr3);
+//   }
+
+//   function displayShake() {
+//     const ingredientsList = ingredients.join(", ");
+//     container.innerText = `The client wants a ${size} shake, containing ${ingredientsList}`;
+//   }
+
+//   addIngredients("banana", "dates", "Tahini");
+//   addIngredients("Peanut butter", "Strawberry", "MORE KETCHUP AND MAJONESE PLS");
+
+//   displayShake();
+// }
+
+// makeShake("HUGE");
+
+
+
+
 
 

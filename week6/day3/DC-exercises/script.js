@@ -19,6 +19,7 @@ const displayGroceries = () => {
 const cloneGroceries = () => {
     const clonedGroceries = { ...groceries };
     let user = client; // user === John
+    // console.log(user)
     client = "Betty";
     const shopping = { ...groceries };
     shopping.totalPrice = "35$";
