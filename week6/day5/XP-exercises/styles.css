@@ -82,6 +82,7 @@ body {
   max-width: 100%;
   border: 5px solid #333;
   background-color: #333;
+  margin-bottom: 25px; /* Добавьте отступ вниз */
 }
 
 @media (max-width: 900px) {
