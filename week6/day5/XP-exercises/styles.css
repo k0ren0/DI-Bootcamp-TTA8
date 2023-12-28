@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'SEGA';
+  src: url('./sega.ttf') format('truetype'); /* Adjust the filename if necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'SEGA', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.search-container {
+  text-align: center;
+  padding: 20px;
+}
+
+#cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+  max-width: 960px; /* Set a maximum width for the card container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'SEGA', 'Arial', sans-serif;
+  width: calc(33.33% - 20px); /* Set a specific width for the card */
+  box-sizing: border-box; /* Ensure that padding and border are included in the total width */
+  font-size: 14px; /* Adjust the font size as needed */
+  max-width: 300px; /* Set a maximum width for the card */
+}
+
+.card img {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 900px) {
+  .card {
+    width: calc(50% - 20px); /* Adjust card width for two columns */
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: calc(100% - 20px); /* Adjust card width for one column */
+  }
+}
