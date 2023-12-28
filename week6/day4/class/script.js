@@ -157,6 +157,7 @@
 // const FirstH = words.some(word => word[0] === "h")
 // console.log(FirstH);
 
+
 // // 3
 // let returnedSome = words.some ((element) => {
 //     return element.startsWith("h");
@@ -245,14 +246,6 @@
 
 // console.log(newNumbers)
 
-// // OR
-
-// const newNumbers = numbers.filter((element) => {
-//     return element > 6
-// });
-
-// console.log(newNumbers)
-
 // // // // OR (more terms) 
 
 // const newNumbers = numbers.filter((element) => {
@@ -305,7 +298,7 @@
 // // the number 5 is the starting point
 // console.log(sum)
 
-// // EXEMPLE
+// // EXAMPLE
 
 // let party = [
 //     {
