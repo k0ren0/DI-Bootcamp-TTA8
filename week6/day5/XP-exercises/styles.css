@@ -50,10 +50,10 @@ body {
 #searchInput {
   font-family: 'New Roman', sans-serif;
   font-size: 18px;
-  width: 100%; /* Процентная ширина */
-  box-sizing: border-box; /* Учитывать padding внутри элемента */
+  width: 100%; 
+  box-sizing: border-box; 
   padding: 10px;
-  margin: 0; /* Сбросить внешний отступ */
+  margin: 0; 
 }
 
 .card {
@@ -79,7 +79,7 @@ body {
   max-width: 100%;
   border: 5px solid #333;
   background-color: #333;
-  margin-bottom: 25px; /* Добавьте отступ вниз */
+  margin-bottom: 25px; 
 }
 
 @media (max-width: 900px) {
