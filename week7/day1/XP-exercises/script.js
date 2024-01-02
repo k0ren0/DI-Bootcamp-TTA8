@@ -119,47 +119,49 @@
 //     console.log(myCat);
 //     console.log(myDolphin);
 
-    // Part 2
+//     // Part 2
 
-    class Animal {
-        constructor(name, type, color){
-            this.name = name;
-            this.type = type;
-            this.color = color;
-        }
-        makeSound(sound) {
-            return `${this.name}, ${this.color} ${this.type}, makes ${sound}`;
-        }
+//     class Animal {
+//         constructor(name, type, color){
+//             this.name = name;
+//             this.type = type;
+//             this.color = color;
+//         }
+//         makeSound(sound) {
+//             return `${this.name}, ${this.color} ${this.type}, makes ${sound}`;
+//         }
 
-        makeCowSound(soundCow) { //  Part 3
-            return `${soundCow} I'm a ${this.type}, named ${this.name} and I'm ${this.color}`;
-        }
-    }
+//         makeCowSound(soundCow) { //  Part 3
+//             return `${soundCow} I'm a ${this.type}, named ${this.name} and I'm ${this.color}`;
+//         }
+//     }
        
-    class Mammal extends Animal {
-        constructor(name, type, color) {
-            super(name, type, color);
-        }
+//     class Mammal extends Animal {
+//         constructor(name, type, color) {
+//             super(name, type, color);
+//         }
     
-        sound(sound) {
-            return super.makeSound(sound);
-        }
+//         sound(sound) {
+//             return super.makeSound(sound);
+//         }
 
-        soundCow(soundCow) { //  Part 3
-            return super.makeCowSound(soundCow);
-        }
+//         soundCow(soundCow) { //  Part 3
+//             return super.makeCowSound(soundCow);
+//         }
 
-    }
+//     }
 
-const myDog = new Mammal('Lucky', 'dog', 'brown');
-const myCat = new Mammal('Crazy','cat', 'grey');
-const myDolphin = new Mammal('Quickly', 'dolphin', 'white and gray');
+// const myDog = new Mammal('Lucky', 'dog', 'brown');
+// const myCat = new Mammal('Crazy','cat', 'grey');
+// const myDolphin = new Mammal('Quickly', 'dolphin', 'white and gray');
 
-console.log(myDog.sound("Woof woof"));
-console.log(myCat.sound("Miow miow"));
-console.log(myDolphin.sound("tdsdsddffff"));
+// console.log(myDog.sound("Woof woof"));
+// console.log(myCat.sound("Miow miow"));
+// console.log(myDolphin.sound("tdsdsddffff"));
 
-//  Part 3
+// //  Part 3
 
-const farmerCow = new Mammal('Lily', 'cow', 'brown and white')
-console.log(farmerCow.soundCow("Moooo"));
+// const farmerCow = new Mammal('Lily', 'cow', 'brown and white')
+// console.log(farmerCow.soundCow("Moooo"));
+
+
