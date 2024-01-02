@@ -204,20 +204,20 @@
 // let obj1 = {...obj, city:"tlv", lname:"cohen", age: 30}
 // console.log(obj1);
 
-// // /** Nested Object Destructuring  */
+// // // /** Nested Object Destructuring  */
 
-let obj = {
-    fname: "dan", 
-    age: 16,
-    address: {
-        city:"NY",
-        country:"USA"
-    }
-};
+// let obj = {
+//     fname: "dan", 
+//     age: 16,
+//     address: {
+//         city:"NY",
+//         country:"USA"
+//     }
+// };
 
-const {fname, age, address} = obj;
+// const {fname, age, address} = obj;
 
-console.log(fname, age, address.city);
+// console.log(fname, age, address.city);
 
 // // // OR
 
@@ -230,3 +230,152 @@ console.log(fname, age, address.city);
 // const {fname, age, address:{city, country}} = obj;
 
 // console.log(fname, age, city, country);
+
+
+// filter for all users older than 30
+// and store their data in an array
+// use Array.filter Array.map Object.keys
+
+
+// const users = {
+//     user1: { age: 44, name: 'picard', },
+//     user2: { age: 12, name: 'sisko', },
+//     user3: { age: 109, name: 'janeway',},
+//   }
+
+// // Results:
+
+// // {id:'user1',age:44, name: 'picard'},
+// // {id:'user3',age:109, name: 'janeway'}
+
+
+// // //   // OR
+
+
+// const keysUsers = Object.keys(users)
+//   .filter(key => users[key].age > 30)
+//   .map(key => ({
+//     id: key,
+//     age: users[key].age,
+//     name: users[key].name,
+//   }));
+
+// console.log(keysUsers);
+
+
+// // OR (деструктуризация и лучший вариант)
+
+// const keysUsers_var2 = Object.keys(users)
+//   .filter(key => users[key].age > 30)
+//   .map((id) => ({id: id, ...users[id]}));
+
+// console.log(keysUsers_var2);
+
+
+
+// let name = "Marry";
+// let email = "m@gmail.com";
+// let id = "user1";
+
+// let obj = {
+//     name,
+//     email,
+//     id,
+// };
+
+// console.log(obj);
+
+
+// /** object method */
+
+
+// let obj = {
+//     name: "jonh",
+//     getName: function(){
+//         return this.name
+//     }
+// }
+
+// let username = obj.getName()
+// console.log(username);
+
+// // console.log(this);
+
+
+// /** CLASS */
+
+// class Animal {
+//     constructor(animalname){
+//         this.name = animalname;
+//     }
+//     makeSound() {
+//         return (`${this.name} make a sound`)
+//     }
+// }
+
+// const animalA = new Animal('Dog');
+// const animalB = new Animal('Lion');
+// let soundA = animalA.makeSound();
+// let soundB = animalB.makeSound();
+// console.log(soundA);
+// console.log(soundB);
+
+
+// // /** SUBcLASS */
+
+
+// class Animal {
+//     constructor(animalname){
+//         this.name = animalname;
+//     }
+//     makeSound() {
+//         return (`${this.name} make a sound`)
+//     }
+// }
+
+// const animalA = new Animal('Dog');
+// const animalB = new Animal('Lion');
+
+// let soundA = animalA.makeSound();
+// let soundB = animalB.makeSound();
+
+// // console.log(soundA);
+// // console.log(soundB);
+
+// class Dog extends Animal {
+//     constructor(name){
+//         super("Dog")
+//         this.mydogname = name
+//     }
+//     // getters
+//     bark(){
+//         return `My ${this.name}, ${this.mydogname} bark`;
+//     }
+//     makeSound(){
+//         return "how how"
+//     }
+
+//     getName(){
+//         return this.mydogname
+//     }
+
+
+//     // setters
+//     setName(val){
+//         this.mydogname = val
+//     }
+    
+// }
+
+// class Chinto extends Dog {
+
+// }
+
+// const myDog = new Dog('Tony');
+
+
+// let sound = myDog.bark();
+// let soundAnimal = myDog.makeSound();
+// console.log(sound);
+// console.log(soundAnimal);
+
