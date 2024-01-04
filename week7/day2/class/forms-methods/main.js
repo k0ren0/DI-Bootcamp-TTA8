@@ -65,16 +65,35 @@
 // console.log(birthdayCakeCandles(arr)); 
 
 
-// // find the smallest distance between 2• numbers in array
+// // find the smallest distance between 2 numbers in array
 // // [2,5,3,7,2,3,6,8,6] => 2
 
 // function smallestDistance(arr) {
 //     const smallDist = Math.min(...arr);
 
-//     const count = arr.filter(item => item === smallDist).length
+//     let count = arr.filter(item => item === smallDist).length
 
 //     return count;
 // }
 
 // let arr = [2,5,3,7,2,3,6,8,6];
 // console.log(smallestDistance(arr));
+
+// // OR variant
+
+// function minimumDistance(arr) {
+//     let distances = [];
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (i !== arr.lastIndexOf(arr[i])) {
+//             let minDistance = arr.lastIndexOf(arr[i]) - i;
+//             distances.push(minDistance);
+//         }
+//     }
+
+//     return distances.length === 0
+//         ? -1
+//         : distances.sort((a, b) => a - b)[0];
+// }
+
+// console.log(minimumDistance(arr));
