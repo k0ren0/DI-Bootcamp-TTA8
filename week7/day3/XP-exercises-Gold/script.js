@@ -15,10 +15,7 @@
 //   });
 
 //   Explanation:
-// Promise1 is immediately fulfilled with a value of 3.
-// Promise2 has a non-perspective value (42) and is considered to be fulfilled.
-// Promise3 will be executed after a delay of 3 seconds with a value of 'foo'.
-// Thus, Promise.all will wait for the fulfillment of all three promises and the then block will be executed with the array [3, 42, 'foo'] which represents the fulfillment values of the three promises.
+// Promise.all will wait for the fulfillment of all three promises and the then block will be executed with the array [3, 42, 'foo'] which represents the fulfillment values of the three promises.
 
 // const promise1 = new Promise((res, rej) => {
 //     setTimeout(() => {
