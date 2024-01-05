@@ -42,107 +42,111 @@
 // .catch(error => console.log(error))
 
 
-// // // 2nd Daily Challenge
+// // // // 2nd Daily Challenge
 
-const morse = `{
-    "0": "-----",
-    "1": ".----",
-    "2": "..---",
-    "3": "...--",
-    "4": "....-",
-    "5": ".....",
-    "6": "-....",
-    "7": "--...",
-    "8": "---..",
-    "9": "----.",
-    "a": ".-",
-    "b": "-...",
-    "c": "-.-.",
-    "d": "-..",
-    "e": ".",
-    "f": "..-.",
-    "g": "--.",
-    "h": "....",
-    "i": "..",
-    "j": ".---",
-    "k": "-.-",
-    "l": ".-..",
-    "m": "--",
-    "n": "-.",
-    "o": "---",
-    "p": ".--.",
-    "q": "--.-",
-    "r": ".-.",
-    "s": "...",
-    "t": "-",
-    "u": "..-",
-    "v": "...-",
-    "w": ".--",
-    "x": "-..-",
-    "y": "-.--",
-    "z": "--..",
-    ".": ".-.-.-",
-    ",": "--..--",
-    "?": "..--..",
-    "!": "-.-.--",
-    "-": "-....-",
-    "/": "-..-.",
-    "@": ".--.-.",
-    "(": "-.--.",
-    ")": "-.--.-"
-  }`
+// const morse = `{
+//     "0": "-----",
+//     "1": ".----",
+//     "2": "..---",
+//     "3": "...--",
+//     "4": "....-",
+//     "5": ".....",
+//     "6": "-....",
+//     "7": "--...",
+//     "8": "---..",
+//     "9": "----.",
+//     "a": ".-",
+//     "b": "-...",
+//     "c": "-.-.",
+//     "d": "-..",
+//     "e": ".",
+//     "f": "..-.",
+//     "g": "--.",
+//     "h": "....",
+//     "i": "..",
+//     "j": ".---",
+//     "k": "-.-",
+//     "l": ".-..",
+//     "m": "--",
+//     "n": "-.",
+//     "o": "---",
+//     "p": ".--.",
+//     "q": "--.-",
+//     "r": ".-.",
+//     "s": "...",
+//     "t": "-",
+//     "u": "..-",
+//     "v": "...-",
+//     "w": ".--",
+//     "x": "-..-",
+//     "y": "-.--",
+//     "z": "--..",
+//     ".": ".-.-.-",
+//     ",": "--..--",
+//     "?": "..--..",
+//     "!": "-.-.--",
+//     "-": "-....-",
+//     "/": "-..-.",
+//     "@": ".--.-.",
+//     "(": "-.--.",
+//     ")": "-.--.-",
+//     " ": " "
+//   }`
 
-function toJs() {
-    return new Promise((resolve, reject) => {
-        let morseParse = JSON.parse(morse);
-            if (Object.keys(morseParse).length === 0) {
-            reject("Object is empty.");
-        } else 
-            resolve(morseParse);
-        }  
-    )};
+//   const toJs = (jsonString) => {
+//     return new Promise((resolve, reject) => {
+//         let objMorse;
+//         try {
+//             objMorse = JSON.parse(jsonString);
+//         } catch (error) {
+//             reject(new Error("Invalid JSON format --- ERROR in toJs function"));
+//             return;
+//         }
+//         if (Object.keys(objMorse).length === 0) {
+//             reject(new Error("Empty JSON --- ERROR in toJs function"));
+//         } else {
+//             resolve(objMorse);
+//         }
+//     });
+// };
 
-function toMorse(morseJS) {
-    return new Promise((resolve, reject) => {
-        if (!userText || typeof userText !== "string") {
-            reject("Error. You entered a character that doesnt exist "); 
-        } else {
-            resolve();
-            const uppercasedUserText = usedText.toUpperCase();
-            const morseArr = [];
+// const toMorse = (morseObj) => {
+//     return new Promise((resolve, reject) => {
+//         const userStr = prompt("Enter a word");
+//         if (!userStr) {
+//             reject(new Error("No input provided"));
+//             return;
+//         }
+//         const arrStr = userStr.toLowerCase().split("");
+//         const returnArr = arrStr.map(char => {
+//             if (char in morseObj) {
+//                 return morseObj[char];
+//             } else {
+//                 reject(new Error(`Character ${char} does not exist in the Morse code mapping`));
+//                 return null; // or some placeholder value
+//             }
+//         });
+//         resolve(returnArr);
+//     });
+// };
 
-            for (let x of uppercasedUserText) {
-                if (morseJS[x]) {
-                morseArr.push(morseJS[x]);
-                } else if (x === ' ') {
-                morseArr.push(' ');
-                } else {
-                reject(`Unsupported character: ${x}`);
-                return;
-                }
-            }
+// const joinWords = (morseTranslation) => {
+//     return morseTranslation.map((element) => `<div>${element}</div>`);
+// };
 
-      resolve(morseArr.join(' '));
-    }
-  });
-}
-        
-function joinWords(morseTranslation) {
-    return new Promise((resolve, reject) => {
-      if (!Array.isArray(morseTranslation)) {
-        reject("Invalid input. Please provide a valid array.");
-      } else {
-        const joinedMorse = morseTranslation.join('\n');
-        resolve(joinedMorse);
-      }
-    });
-  }
+// toJs(morse)
+//     .then(result => {
+//         return toMorse(result);
+//     })
+//     .then((result) => {
+//         console.log(result);
+//         return joinWords(result);
+//     })
+//     .then((htmlArr) => {
+//         document.getElementById("output").innerHTML = htmlArr.join('');
+//     })
+//     .catch(error => {
+//         console.log(error.message);
+//     });
 
-  const morseTranslation = ["....", ".-..", ".-..", "---", ",", " ", "World", "!"];
-  joinWords(morseTranslation)
-    .then(joinedMorse => {
-      // Assuming there is an HTML element with an id "output" to display the result
-      const outputElement = document.getElementById("output");
-      outputElement.innerText = joinedMorse;
-    })
-    .catch(error => console.error("Rejected:", error));
+
