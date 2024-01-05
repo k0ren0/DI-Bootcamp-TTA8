@@ -53,17 +53,37 @@
 // // .then(response => response.json())
 // // .then(objectStarWars => console.log(objectStarWars.result));
 
-async function fetchGet() {
-    try {
-        const response = await fetch("https://www.swapi.tech/api/starships/9/");
-        if (!response.ok) {
-            throw new Error(`Error status: ${response.status}`);
-        }
-        const objectStarWars = await response.json();
-        console.log(objectStarWars.result);
-    } catch (error) {
-        console.error("Error fetching data:", error.message);
-    }
-}
+// async function fetchGet() {
+//     try {
+//         const response = await fetch("https://www.swapi.tech/api/starships/9/");
+//         if (!response.ok) {
+//             throw new Error(`Error status: ${response.status}`);
+//         }
+//         const objectStarWars = await response.json();
+//         console.log(objectStarWars.result);
+//     } catch (error) {
+//         console.error("Error fetching data:", error.message);
+//     }
+// }
 
-fetchGet();
+// fetchGet();
+
+// // // // Exercise 4: Analyze
+
+// function resolveAfter2Seconds() {
+//     return new Promise(resolve => {
+//         setTimeout(() => {
+//             resolve('resolved');
+//         }, 2000);
+//     });
+// }
+
+// async function asyncCall() {
+//     console.log('calling');
+//     let result = await resolveAfter2Seconds();
+//     console.log(result);
+// }
+
+// asyncCall();
+
+// // First we will see "calling" and after 2 seconds "resolved"
