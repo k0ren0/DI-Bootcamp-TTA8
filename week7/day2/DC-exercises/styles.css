@@ -1,8 +1,0 @@
-label, input {
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-input[type="text"] {
-    width: 200px; 
-}
