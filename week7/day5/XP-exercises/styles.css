@@ -13,13 +13,26 @@ body {
     overflow-x: hidden;
 }
 
+#logo {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo img {
+    width: 25%;
+    height: auto;
+}
+
 #app {
     text-align: center;
     font-size: 1.8vh;
     font-weight: bold;
     padding: 5px;
     border-radius: 15px;
-    border: 3px solid #dbde0e;
+    border: 3px solid #fff200;
     box-sizing: border-box;
     width: 35%;
     height: 25%;
@@ -34,19 +47,26 @@ button {
     font-weight: bold;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.8);
-    border: 3px solid #dbde0e;
+    border: 3px solid #fff200;
     border-radius: 10px;
 }
 
 #loading {
-    margin-top: 30px;
-    font-size: 30px; /* Изменен размер текста "Loading" */
-    display: none;
+    margin: 7%;
+    font-size: 4.5vw;
+    display: flex;
+    text-align: center;
+    align-items: center; 
+    justify-content: center; 
 }
 
-#loading i {
-    font-size: 74px;
-    margin-right: 40px;
+#loading .loading-icon {
+    font-size: 4vh; /* Изменен размер иконки */
+    margin-right: 20px;
+}
+
+#loading .loading-text {
+    font-size: 4vh; /* Изменен размер текста */
 }
 
 #app-loading {
@@ -57,3 +77,4 @@ button {
     font-size: 30px;
     color: #555;
 }
+

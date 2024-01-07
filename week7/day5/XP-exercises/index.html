@@ -9,9 +9,18 @@
     <title>Star wars App</title>
 </head>
 <body>
+    <div id="logo">
+        <img src="./sourse/star_wars_logo_PNG20.png" alt="Star Wars Logo">
+    </div>
+
     <div id="app">
         <div id="loading" style="display: none;">
-            <i class="fas fa-spinner fa-spin"></i> Loading...
+            <div id="loading-icon">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <div id="loading-text">
+                Loading...
+            </div>
         </div>
         <div id="error" style="display: none;">
             <i class="fas fa-exclamation-circle"></i> Error loading data.
@@ -21,7 +30,6 @@
 
      <button onclick="getRandomCharacter()">Find someone</button>
     <script src="app.js"></script>
-
     <script src="./script.js"></script>
 </body>
 </html>
