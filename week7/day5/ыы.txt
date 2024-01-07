@@ -7,15 +7,7 @@ async function fetchSupportedCurrencies() {
     const data = await response.json();
 
     if (response.ok && data.result === 'success') {
-      const supportedCurrencies = Object.keys(data.conversion_rates);
-      if (!supportedCurrencies.includes('USD')) {
-        supportedCurrencies.push('USD');
-      }
-      if (!supportedCurrencies.includes('ILS')) {
-        supportedCurrencies.push('ILS');
-      }
-
-      return supportedCurrencies;
+      return Object.keys(data.conversion_rates);
     } else {
       throw new Error('Failed to fetch currencies.');
     }
@@ -56,10 +48,6 @@ async function populateCurrencyDropdowns() {
       fromCurrencyDropdown.add(option);
       toCurrencyDropdown.add(option.cloneNode(true));
     });
-
-    fromCurrencyDropdown.value = 'USD';
-
-    toCurrencyDropdown.value = 'ILS';
   } catch (error) {
     console.error('Error:', error.message);
   }
@@ -78,4 +66,5 @@ function convert() {
   convertCurrency(fromCurrency, toCurrency, amount);
 }
 
+// Populate currency dropdowns on page load
 populateCurrencyDropdowns();
