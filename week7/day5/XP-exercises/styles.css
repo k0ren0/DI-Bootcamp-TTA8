@@ -61,12 +61,12 @@ button {
 }
 
 #loading .loading-icon {
-    font-size: 4vh; /* Изменен размер иконки */
+    font-size: 4vh; 
     margin-right: 20px;
 }
 
 #loading .loading-text {
-    font-size: 4vh; /* Изменен размер текста */
+    font-size: 4vh; 
 }
 
 #app-loading {
