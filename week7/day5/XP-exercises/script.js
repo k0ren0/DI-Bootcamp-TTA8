@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', getRandomCharacter);
 });
 
-function getRandomCharacter() {
+async function getRandomCharacter() {
     const loading = document.getElementById('loading');
     const error = document.getElementById('error');
     const characterInfo = document.getElementById('character-info');
@@ -12,30 +12,21 @@ function getRandomCharacter() {
     error.style.display = 'none';
     characterInfo.innerHTML = '';
 
-    const randomCharacterNumber = Math.floor(Math.random() * 83) + 1;
+    try {
+        const randomCharacterNumber = Math.floor(Math.random() * 83) + 1;
+        const characterData = await fetchData(`https://www.swapi.tech/api/people/${randomCharacterNumber}`);
+        const character = characterData.result.properties;
 
-    fetchData(`https://www.swapi.tech/api/people/${randomCharacterNumber}`)
-        .then(data => {
-            const character = data.result.properties;
-            const homeworldURL = character.homeworld;
-
-            fetchData(homeworldURL)
-                .then(homeworldData => {
-                    loading.style.display = 'none';
-                    character.homeworldData = homeworldData.result.properties;
-                    displayCharacterInfo(character);
-                })
-                .catch(err => {
-                    loading.style.display = 'none';
-                    error.style.display = 'block';
-                    console.error('Error fetching homeworld data:', err);
-                });
-        })
-        .catch(err => {
-            loading.style.display = 'none';
-            error.style.display = 'block';
-            console.error('Error fetching character data:', err);
-        });
+        const homeworldURL = character.homeworld;
+        const homeworldData = await fetchData(homeworldURL);
+        
+        loading.style.display = 'none';
+        displayCharacterInfo(character, homeworldData.result.properties);
+    } catch (err) {
+        loading.style.display = 'none';
+        error.style.display = 'block';
+        console.error('Error fetching data:', err);
+    }
 }
 
 function fetchData(url) {
@@ -55,16 +46,21 @@ function fetchData(url) {
         });
 }
 
-function displayCharacterInfo(character) {
+function displayCharacterInfo(character, homeworldData) {
     const characterInfo = document.getElementById('character-info');
-    const homeworldData = character.homeworldData;
 
     const infoHTML = `
         <h2>${character.name}</h2>
         <p>Height: ${character.height}</p>
         <p>Gender: ${character.gender}</p>
         <p>Birth Year: ${character.birth_year}</p>
-        <p>Home World: ${homeworldData.name}</p>
-        `;
+        <p id="homeworld-info">Home World: ${homeworldData.name}</p>
+    `;
+
     characterInfo.innerHTML = infoHTML;
+
+    setTimeout(() => {
+        const homeworldInfo = document.getElementById('homeworld-info');
+        homeworldInfo.style.display = 'block';
+    }, 1500);
 }
