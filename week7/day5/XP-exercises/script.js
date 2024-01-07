@@ -65,7 +65,6 @@ function displayCharacterInfo(character) {
         <p>Gender: ${character.gender}</p>
         <p>Birth Year: ${character.birth_year}</p>
         <p>Home World: ${homeworldData.name}</p>
-        <p>Population: ${homeworldData.population}</p>
-    `;
+        `;
     characterInfo.innerHTML = infoHTML;
 }

@@ -17,14 +17,14 @@ body {
     text-align: center;
     font-size: 1.8vh;
     font-weight: bold;
-    padding: 10px;
+    padding: 5px;
     border-radius: 15px;
     border: 3px solid #dbde0e;
     box-sizing: border-box;
-    /* min-width: 300px; */
-    width: 40%;
-    height: 25%; /* Фиксированная минимальная высота */
+    width: 35%;
+    height: 25%;
     overflow: hidden;
+    position: relative;
 }
 
 button {
@@ -38,13 +38,22 @@ button {
     border-radius: 10px;
 }
 
-#loading,
-#error {
-    margin-top: 20px;
-    size: 5vw;
-    color: #ffffff;
+#loading {
+    margin-top: 30px;
+    font-size: 30px; /* Изменен размер текста "Loading" */
+    display: none;
 }
 
-#error {
-    color: #ff0000;
+#loading i {
+    font-size: 74px;
+    margin-right: 40px;
+}
+
+#app-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: #555;
 }
