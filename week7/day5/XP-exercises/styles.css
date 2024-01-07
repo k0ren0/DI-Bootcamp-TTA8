@@ -1,0 +1,50 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp');
+    background-repeat: repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    overflow-x: hidden;
+}
+
+#app {
+    text-align: center;
+    font-size: 1.8vh;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 15px;
+    border: 3px solid #dbde0e;
+    box-sizing: border-box;
+    /* min-width: 300px; */
+    width: 70%;
+    height: 25%; /* Фиксированная минимальная высота */
+    overflow: hidden;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 3vh;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 3px solid #dbde0e;
+    border-radius: 10px;
+}
+
+#loading,
+#error {
+    margin-top: 20px;
+    size: 5vw;
+    color: #ffffff;
+}
+
+#error {
+    color: #ff0000;
+}

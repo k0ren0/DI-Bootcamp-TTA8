@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Get All Users</h2>
+    <form method="GET" action="https://jsonplaceholder.typicode.com/users">
+        <input type="submit" value="send" />
+    </form>
+    <h2>Get User By Id</h2>
+    <form method="GET" action="https://jsonplaceholder.typicode.com/users">
+        <input type="number" min="1" max="10" name="id" />
+        <input type="submit" value="send" />
+    </form>
+    <h2>All Posts</h2>
+    <form method="GET" action="https://jsonplaceholder.typicode.com/posts">
+        <input type="submit" value="send" />
+    </form>
+    <h2>Posts by user id</h2>
+    <form method="GET" action="https://jsonplaceholder.typicode.com/posts">
+        <input type="number" min="1" max="10" name="userId" />
+        <!-- <input type="text" name="username" /> -->
+        <input type="submit" value="send" />
+    </form>
+    <h2>Add Post to User</h2>
+    <form method="POST" action="https://jsonplaceholder.typicode.com/posts">
+        Title: <input type="text" name="title" /><br>
+        Body:  <input type="text" name="body" /><br>
+        User id: <input type="number" name="userId" /><br>
+        <input type="submit" value="send" />
+    </form>
+
+    <h2>Get All Users</h2>
+    <form method="GET" action="https://users-18kl.onrender.com/users">
+        <input type="submit" value="send" />
+    </form>
+
+    <h2>Add a User</h2>
+    <form method="POST" action="https://users-18kl.onrender.com/user">
+        Name: <input type="text" name="name" /><br>
+        Username:  <input type="text" name="username" /><br>
+        Email: <input type="email" name="email" /><br>
+        <input type="submit" value="send" />
+    </form>
+</body>
+</html>
+
+<!-- 
+Add a user
+1. A form with post method
+2. Action https://users-18kl.onrender.com/user
+3. Input name -> name
+3. input name -> email
+4. input name -> username
+5.  Submit
+ -->
