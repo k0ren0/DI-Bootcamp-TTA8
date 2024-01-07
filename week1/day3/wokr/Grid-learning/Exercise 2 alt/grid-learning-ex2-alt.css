@@ -1,0 +1,62 @@
+.wrapper {
+    display: grid;
+    grid-template-rows: repeat(8, 80px);
+    grid-template-areas: 
+    "a a a a a a a a"
+    "b b b c c c c c"
+    "b b b c c c c c"
+    "b b b c c c c c"
+    "d d d c c c c c"
+    "d d d c c c c c"
+    "d d d e e e e e"
+    "d d d e e e e e"
+    "f f f f f f g g"
+    "f f f f f f g g" 
+    "f f f f f f g g"  
+    "h h h h h h h h";
+    gap: 5px;
+
+}
+
+.header {
+    background-color: aqua;
+}
+
+.hero {
+    background-color: rgb(123, 118, 129);
+
+}
+
+.main-cont {
+    background-color: rgb(207, 162, 39);
+
+}
+
+.sidebar {
+    background-color: lightgreen;
+
+}
+
+.extra-cont {
+    background-color: gray;
+
+}
+
+.related-images {
+    background-color: green;
+
+}
+
+.related-posts {
+    background-color: lightpink;
+
+}
+
+.footer {
+    background-color: orange;
+
+}
+
+
+
+

@@ -1,0 +1,38 @@
+Конечно, давайте подробнее разберем, почему внесены изменения.
+
+HTML:
+
+html
+Copy code
+<label for="input"> Choose a category:</label>
+<input type="text" id="input" required>
+<button type="button" onclick="fetchGif()">Fetch Gif</button>
+В HTML-форме у вас есть текстовое поле <input> с id="input". Таким образом, для получения значения этого текстового поля в JavaScript вы должны использовать document.getElementById('input').value.
+
+JavaScript:
+
+javascript
+Copy code
+const input = document.getElementById('input').value;
+Здесь мы используем document.getElementById('input'), чтобы получить ссылку на элемент с id="input", и затем value для получения значения, введенного пользователем.
+
+Обработка события клика на кнопке:
+
+javascript
+Copy code
+<button type="button" onclick="fetchGif()">Fetch Gif</button>
+При нажатии на кнопку "Fetch Gif" вызывается функция fetchGif(), которая использует значение из текстового поля, чтобы выполнить запрос к API Giphy с использованием выбранной категории.
+
+Добавление элемента GIF:
+
+javascript
+Copy code
+const gifElement = document.createElement('div');
+gifElement.innerHTML = `
+  <img src="${imageUrl}" alt="${category}">
+  <button onclick="deleteGif(this)">Delete</button>
+`;
+gifContainer.appendChild(gifElement);
+Когда получен ответ от API, создается новый элемент div, содержащий изображение GIF и кнопку "Delete". Этот элемент добавляется в контейнер GIF (gifContainer).
+
+Таким образом, изменения в коде направлены на использование правильного идентификатора (id="input") для текстового поля в HTML и корректного получения его значения в JavaScript. Теперь при вводе категории и нажатии кнопки "Fetch Gif" скрипт правильно получает значение из текстового поля и использует его для запроса к API Giphy.
