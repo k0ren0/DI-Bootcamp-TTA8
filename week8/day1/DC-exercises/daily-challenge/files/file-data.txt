@@ -1,0 +1,1 @@
+In read-file.js, require the fs module and read the content from the file-data.txt file. Display the content in the terminal.
