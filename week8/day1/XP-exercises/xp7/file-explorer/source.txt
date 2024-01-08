@@ -1,0 +1,1 @@
+In copy-file.js, use the fs module to read the content from a file named source.txt and then write the same content to a new file named destination.txt
