@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book API Test</title>
+</head>
+<body>
+
+  <h1>Book API Test</h1>
+
+  <button onclick="getAllBooks()">Get All Books</button>
+  <button onclick="getBookById()">Get Book by ID</button>
+  <button onclick="createNewBook()">Create New Book</button>
+
+  <script>
+    function getAllBooks() {
+      fetch('http://localhost:5001/api/books')
+        .then(response => response.json())
+        .then(data => console.log('All Books:', data))
+        .catch(error => console.error('Error:', error));
+    }
+
+    function getBookById() {
+      const bookId = prompt('Enter book ID:');
+      if (!bookId) return;
+
+      fetch(`http://localhost:5001/api/books/${bookId}`)
+        .then(response => response.json())
+        .then(data => console.log('Book by ID:', data))
+        .catch(error => console.error('Error:', error));
+    }
+
+    function createNewBook() {
+      const title = prompt('Enter book title:');
+      const author = prompt('Enter book author:');
+      const publishedYear = prompt('Enter published year:');
+
+      fetch('http://localhost:5001/api/books', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title,
+          author,
+          publishedYear: parseInt(publishedYear),
+        }),
+      })
+        .then(response => response.json())
+        .then(data => console.log('New Book Created:', data))
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+
+</body>
+</html>
+

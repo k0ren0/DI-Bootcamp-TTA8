@@ -36,6 +36,6 @@ app.get('/posts/:id', (req, res) => {
 const PORT = 3000;
 
 app.listen(PORT, () => {
-console.log(`Go to http://localhost:${PORT}`);
+console.log(`I'm here http://localhost:${PORT}`);
 });
 
