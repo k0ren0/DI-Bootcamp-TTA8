@@ -28,7 +28,7 @@ app.post("/emojis", (req, res) => {
     const randomIndx = Math.floor(Math.random() * emojis.length);
     const randomEmoji = emojis[randomIndx];
     const shuffleEmojis = shuffleArray([...emojis]);
-   
+
     playerScore += 10;
 
     res.json({ shuffleEmojis, randomEmoji, playerScore });
@@ -36,9 +36,9 @@ app.post("/emojis", (req, res) => {
 
 app.post("/checkGuess", (req, res) => {
     const { name, guess } = req.body;
-        console.log(name);
-        console.log(guess);
-        
+    console.log(name);
+    console.log(guess);
+
     if (name === guess) {
         return res.json({ message: "Correct" });
     } else {

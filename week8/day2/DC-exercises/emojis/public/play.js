@@ -1,4 +1,5 @@
 let correntEmoji;
+let playerScore = 0; // Declare playerScore globally
 
 const getEmojisApi = () => {
     return fetch("http://localhost:3001/emojis")
@@ -8,13 +9,12 @@ const getEmojisApi = () => {
             render(emojisapi.shuffleEmojis, emojisapi.randomEmoji);
             updateScore(emojisapi.playerScore);
             fetchLeaderboard();
-        correntEmoji = emojisapi.randomEmoji;
+            correntEmoji = emojisapi.randomEmoji;
         })
         .catch(error => {
             console.error('Error fetching emojis:', error);
         });
 }
-
 
 const checkGuessApi = (name, guess) => {
     console.log("Name:", name);
@@ -32,7 +32,10 @@ const checkGuessApi = (name, guess) => {
         console.log(result.message);
 
         if (result.message === "Correct") {
-            alert("Correct guess!"); 
+            playerScore += 10;
+            updateScore(playerScore);
+            alert("Correct guess!");
+            getRandomEmoji();
         } else {
             alert("Incorrect guess!");
         }
@@ -73,7 +76,6 @@ const fetchLeaderboard = () => {
     fetch("http://localhost:3001/leaderboard")
         .then(res => res.json())
         .then(leaderboardData => {
-          
             const leaderboardElement = document.getElementById("leaderboard");
             leaderboardElement.innerHTML = "<h2>Leaderboard</h2>";
             leaderboardData.forEach((entry, index) => {
@@ -82,6 +84,18 @@ const fetchLeaderboard = () => {
         })
         .catch(error => {
             console.error('Error fetching leaderboard:', error);
+        });
+}
+
+const getRandomEmoji = () => {
+    fetch("http://localhost:3001/emojis")
+        .then(res => res.json())
+        .then(emojisapi => {
+            correntEmoji = emojisapi.randomEmoji;
+            render(emojisapi.shuffleEmojis, correntEmoji); // Render the new random emoji
+        })
+        .catch(error => {
+            console.error('Error fetching emojis:', error);
         });
 }
 
