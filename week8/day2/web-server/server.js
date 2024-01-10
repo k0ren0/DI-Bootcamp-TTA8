@@ -76,17 +76,6 @@ app.post("/users", (req, res) => {
 });
 
 // PUT update user by ID
-// app.put("/users/:id", (req, res) => {
-//     const { id } = req.params;
-//     const { name, email } = req.body;
-
-//     const indx = users.findIndex((item) => item.id == id);
-//     if (indx === -1) return res.sendStatus(404);
-    
-//     users
-// });
-
-
 
 app.put("/users/:userId", (req, res) => {
     const userId = parseInt(req.params.userId, 10);
@@ -102,6 +91,40 @@ app.put("/users/:userId", (req, res) => {
     res.json(userToUpdate);
 });
 
+// DELETE endpoint to delete a user by ID
+
+/** Delete - delete a user.*/ 
+/** id as params - delete user. */
+
+// app.delete("/users/:id", (req, res) => {
+//     const { id } = req.params;
+//     const indx = users.findIndex(item => item.id === id);
+  
+//     if (indx === -1) {
+//       return res.sendStatus(404);
+//     }
+  
+//     users.splice(indx, 1);
+//     res.json(users);
+//   });
+  
+
+app.delete("/users/:userId", (req, res) => {
+    const userId = parseInt(req.params.userId, 10);
+
+    // Find the index of the user in the array
+    const userIndex = users.findIndex(user => user.id === userId);
+
+    // Check if the user is not found
+    if (userIndex === -1) {
+        return res.status(404).json({ error: "User not found" });
+    }
+
+    // Remove the user from the array
+    const deletedUser = users.splice(userIndex, 1)[0];
+
+    res.json({ message: "User deleted successfully", deletedUser });
+});
 
 
 
