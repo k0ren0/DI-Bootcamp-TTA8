@@ -50,7 +50,7 @@ app.post('/api/books', (req, res) => {
       author,
       publishedYear,
     };
-  
+ 
     data.push(newBook);
   
     res.status(201).json(newBook);
