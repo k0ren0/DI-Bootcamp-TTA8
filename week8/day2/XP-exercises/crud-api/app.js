@@ -1,5 +1,5 @@
-const express = require('express');
-const { fetchPosts } = require ('./data/dataService');
+import express from 'express';
+import { fetchPosts } from './data/dataService.js';
 
 const app = express();
 const PORT = 5001;

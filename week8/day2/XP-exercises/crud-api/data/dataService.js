@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 const fetchPosts = async () => {
     try {
@@ -10,4 +10,4 @@ const fetchPosts = async () => {
     }
   };
   
-  module.exports = { fetchPosts };
+  export { fetchPosts };
