@@ -38,11 +38,38 @@ const checkGuessApi = (name, guess) => {
             getRandomEmoji();
         } else {
             alert("Incorrect guess!");
+            updateLeaderboardIfNeeded();
         }
     })
     .catch(error => {
         console.error('Error checking guess:', error);
     });
+}
+
+const updateLeaderboardIfNeeded = () => {
+    fetch("http://localhost:3001/leaderboard")
+        .then(res => res.json())
+        .then(leaderboardData => {
+            const sortedLeaderboard = [...leaderboardData, { name: "Player", score: playerScore }]
+                .sort((a, b) => b.score - a.score);
+            
+            const newLeaderboard = sortedLeaderboard.slice(0, 3);
+
+            fetch("http://localhost:3001/leaderboard", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newLeaderboard),
+            })
+            .then(() => fetchLeaderboard())
+            .catch(error => {
+                console.error('Error updating leaderboard:', error);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching leaderboard:', error);
+        });
 }
 
 const render = (options, emoji) => {

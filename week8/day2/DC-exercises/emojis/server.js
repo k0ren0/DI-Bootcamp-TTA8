@@ -13,6 +13,11 @@ app.listen(3001, () => {
 });
 
 let playerScore = 0;
+const leaderboardData = [
+    { name: "Player1", score: 50 },
+    { name: "Player2", score: 40 },
+    { name: "Player3", score: 30 },
+];
 
 app.get("/emojis", (req, res) => {
     const randomIndx = Math.floor(Math.random() * emojis.length);
@@ -28,7 +33,7 @@ app.post("/emojis", (req, res) => {
     const randomIndx = Math.floor(Math.random() * emojis.length);
     const randomEmoji = emojis[randomIndx];
     const shuffleEmojis = shuffleArray([...emojis]);
-
+   
     playerScore += 10;
 
     res.json({ shuffleEmojis, randomEmoji, playerScore });
@@ -38,21 +43,23 @@ app.post("/checkGuess", (req, res) => {
     const { name, guess } = req.body;
     console.log(name);
     console.log(guess);
-
+        
     if (name === guess) {
         return res.json({ message: "Correct" });
     } else {
-        return res.json({ message: "Not Correct" });
+        return res.json({ message: "Incorrect" });
     }
 });
 
 app.get("/leaderboard", (req, res) => {
-    const leaderboardData = [
-        { name: "Player1", score: 50 },
-        { name: "Player2", score: 40 },
-        { name: "Player3", score: 30 },
-    ];
+    res.json(leaderboardData);
+});
 
+app.post("/leaderboard", (req, res) => {
+    const newLeaderboard = req.body;
+    newLeaderboard.sort((a, b) => b.score - a.score);
+    leaderboardData.length = 0;
+    leaderboardData.push(...newLeaderboard.slice(0, 3));
     res.json(leaderboardData);
 });
 
