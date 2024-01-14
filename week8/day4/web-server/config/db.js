@@ -1,3 +1,16 @@
+const knex = require('knex');
+
+const db = knex({
+    client: "pg",
+    connection: {
+        host: "berry.db.elephantsql.com" , //"127.0.0."
+        port: 5432,
+        user : 'gnijujni',
+        password : '5RiwnM1Y71dZdr4DldOM7UxzpaVGCUlZ',
+        database : 'gnijujni'
+    }
+});
+
 const users = [
   { id: 1, name: "John", email: "jjj@gamail.com" },
   { id: 2, name: "Marry", email: "mmm@gamail.com" },
@@ -13,4 +26,5 @@ const products = [
 module.exports = {
   users,
   products,
+  db
 };

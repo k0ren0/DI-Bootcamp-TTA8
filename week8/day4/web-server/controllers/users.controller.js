@@ -1,9 +1,16 @@
 const { users } = require("../config/db.js");
+const { _getAllUsers } = require("../models/users.models.js")
 
 /** add a new product - post */
 
 const getAllUsers = (req, res) => {
-  res.json(users);
+  _getAllUsers()
+  .then(data => {
+    res.json(data)
+  })
+  .catch((err) => {
+    res.status(404).json({msg: "Not found"})
+  })
 };
 
 const searchUser = (req, res) => {
