@@ -1,35 +1,76 @@
-const books = require("../models/booksModel.js");
+// server/controllers/booksController.js
 
-exports.getAllBooks = (req, res) => {
-  res.json(books);
-};
+const Book = require('../models/book');
 
-exports.getBookById = (req, res) => {
-  const bookId = parseInt(req.params.bookId);
-  const book = books.find((book) => book.id === bookId);
-
-  if (book) {
-    res.status(200).json(book);
-  } else {
-    res.status(404).json({ error: 'Book not found' });
+// Read all books
+const readAll = async (req, res) => {
+  try {
+    const books = await Book.getAllBooks();
+    res.json(books);
+  } catch (error) {
+    res.status(500).send('Server Error');
   }
 };
 
-exports.createBook = (req, res) => {
+// Read a specific book
+const readOne = async (req, res) => {
+  try {
+    const book = await Book.getBookById(req.params.bookId);
+    if (!book) {
+      return res.status(404).send('Book not found');
+    }
+    res.json(book);
+  } catch (error) {
+    res.status(500).send('Server Error');
+  }
+};
+
+// Create a new book
+const create = async (req, res) => {
   const { title, author, publishedYear } = req.body;
 
-  if (!title || !author || !publishedYear) {
-    return res.status(400).json({ error: 'Missing required fields' });
+  try {
+    const newBook = await Book.createBook(title, author, publishedYear);
+    res.status(201).json(newBook[0]);
+  } catch (error) {
+    res.status(500).send('Server Error');
   }
+};
 
-  const newBook = {
-    id: books.length + 1,
-    title,
-    author,
-    publishedYear,
-  };
+// Update a book
+const update = async (req, res) => {
+  const { title, author, publishedYear } = req.body;
 
-  books.push(newBook);
+  try {
+    const book = await Book.updateBook(req.params.bookId, title, author, publishedYear);
+    if (!book) {
+      return res.status(404).send('Book not found');
+    }
 
-  res.status(201).json(newBook);
+    res.json(book[0]);
+  } catch (error) {
+    res.status(500).send('Server Error');
+  }
+};
+
+// Delete a book
+const deleteBook = async (req, res) => {
+  try {
+    const book = await Book.deleteBook(req.params.bookId);
+    if (!book) {
+      return res.status(404).send('Book not found');
+    }
+
+    res.json({ msg: 'Book removed' });
+  } catch (error) {
+    res.status(500).send('Server Error');
+  }
+};
+
+module.exports = {
+  readAll,
+  readOne,
+  create,
+  update,
+  deleteBook,
 };
