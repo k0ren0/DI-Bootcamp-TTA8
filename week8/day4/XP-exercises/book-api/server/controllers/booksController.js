@@ -1,8 +1,5 @@
-// server/controllers/booksController.js
-
 const Book = require('../models/book');
 
-// Read all books
 const readAll = async (req, res) => {
   try {
     const books = await Book.getAllBooks();
@@ -12,7 +9,6 @@ const readAll = async (req, res) => {
   }
 };
 
-// Read a specific book
 const readOne = async (req, res) => {
   try {
     const book = await Book.getBookById(req.params.bookId);
@@ -25,7 +21,6 @@ const readOne = async (req, res) => {
   }
 };
 
-// Create a new book
 const create = async (req, res) => {
   const { title, author, publishedYear } = req.body;
 
@@ -37,7 +32,6 @@ const create = async (req, res) => {
   }
 };
 
-// Update a book
 const update = async (req, res) => {
   const { title, author, publishedYear } = req.body;
 
@@ -53,7 +47,6 @@ const update = async (req, res) => {
   }
 };
 
-// Delete a book
 const deleteBook = async (req, res) => {
   try {
     const book = await Book.deleteBook(req.params.bookId);
