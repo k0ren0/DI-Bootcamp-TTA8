@@ -5,9 +5,11 @@ const booksRouter = require('./server/routes/booksRoutes');
 const app = express();
 const port = 5001;
 
-db.raw('select 1+1 as result').then(() => {
+db.raw('select 1+1 as result')
+.then(() => {
   console.log('PostgreSQL connected');
-}).catch((err) => {
+})
+.catch((err) => {
   console.error('Error connecting to PostgreSQL:', err.message);
   process.exit(1);
 });
