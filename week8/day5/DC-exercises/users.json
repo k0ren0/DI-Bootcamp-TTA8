@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Alon",
+    "lastName": "Doe",
+    "email": "johndoe@example.com",
+    "username": "johndoe123",
+    "password": "$2b$10$TLiP591ZSNp/dLHcTY9NHukHf6vWc/bgGOOU9rmnfMONxxyCzwn0K"
+  },
+  {
+    "id": 2,
+    "name": "John2",
+    "lastName": "Doe2",
+    "email": "johndoe2@example.com",
+    "username": "johndoe1234",
+    "password": "$2b$10$ffV.c2nfxEZAOHCa91NpXOQKLh0v1POpMfRcNBZoDG70ZF3myMOde"
+  }
+]
