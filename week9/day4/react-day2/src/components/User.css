@@ -1,0 +1,16 @@
+.userstyle {              
+    display:inline-block;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: cyan;
+};
+
+/* you can change here or in index.js */
+
+/* body {
+    background-color: red; 
+  }
+   */
