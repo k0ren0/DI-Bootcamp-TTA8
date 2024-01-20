@@ -1,0 +1,36 @@
+/* I used add features for CarouselStyles.module.css */
+
+.carouselCustom {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow around the carousel */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hides elements outside of carousel bounds */
+}
+
+.carouselCustom .slide {
+    transition: transform 0.5s ease; /* Smooth transition between slides */
+}
+
+.carouselCustom .carousel .slide img {
+    width: 100%; /* Set image width to 100% */
+    height: auto; /* Auto height to maintain proportions */
+    border-bottom: 5px solid #FFD700; /* Golden border at the bottom of the image */
+}
+
+.carouselCustom .control-arrow,
+.carouselCustom .control-next,
+.carouselCustom .control-prev {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5)); /* Shadow for navigation arrows */
+}
+
+.carouselCustom .control-dots .dot {
+    background: #FFD700; /* Golden color for dot indicators */
+    opacity: 0.7; /* Some transparency for dot indicators */
+}
+
+.carouselCustom .control-dots .dot.selected,
+.carouselCustom .control-dots .dot:hover {
+    opacity: 1; /* Full opacity for active or hovered dot */
+}
