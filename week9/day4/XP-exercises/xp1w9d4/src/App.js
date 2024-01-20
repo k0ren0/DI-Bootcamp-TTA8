@@ -1,5 +1,6 @@
 import './App.css';
 import Car from './Components/Car';
+import Events from './Components/Events';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Car carInfo={carInfo} />
+        <Events />
       </header>
     </div>
   );
