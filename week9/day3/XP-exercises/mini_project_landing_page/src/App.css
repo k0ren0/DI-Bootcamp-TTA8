@@ -1,0 +1,130 @@
+/* App.css */
+
+/* Color variables for easy theming */
+:root {
+  --primary-color: #4a90e2; /* Blue */
+  --secondary-color: #f4f4f4; /* Light gray */
+  --accent-color: #ff6b6b; /* Bright red */
+  --text-color: #333; /* Dark gray */
+}
+
+/* General styles */
+body, .App {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* General styles for sections */
+.section {
+  padding: 4rem 0;
+  color: var(--text-color);
+}
+
+/* Styles for the contact section */
+.contact-section {
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+  margin: auto;
+  max-width: 600px;
+}
+
+.contact-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.contact-section button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.contact-section button:hover {
+  background-color: darken(var(--accent-color), 10%);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .contact-section {
+    margin: 2rem;
+    padding: 2rem;
+  }
+}
+
+/* Background images for sections */
+.image1, .image2, .image3 {
+  position: relative;
+  padding: 4rem 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Gradient mask for images */
+.image1::before, .image2::before, .image3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  z-index: -1;
+}
+
+/* Styles for section containers holding images */
+.image-container {
+  width: 800px; /* Ширина контейнера изображения */
+  height: 500px; /* Высота контейнера изображения */
+  border-radius: 40%; /* Круглая форма контейнера */
+  overflow: hidden; /* Скрывает части изображения, выходящие за границы контейнера */
+  position: relative;
+  box-shadow: 0 0 5px 3px var(--secondary-color); /* Размытая тень для эффекта */
+  margin: auto; /* Центрирует изображение */
+}
+
+/* Adjusting the size and position of the images */
+.image-container img {
+  width: 100%; /* Заставляет изображение заполнять контейнер */
+  height: auto; /* Поддерживает пропорции изображения */
+  position: relative;
+  border-radius: 30%; /* Обеспечивает круглую форму изображения */
+}
+
+/* Gradient effect for additional fading */
+.image-container::after {
+  content: '';
+  position: absolute;
+  top: -5px; 
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: radial-gradient(circle, transparent, var(--secondary-color) 70%);
+  border-radius: 30%;
+  z-index: 1;
+}
