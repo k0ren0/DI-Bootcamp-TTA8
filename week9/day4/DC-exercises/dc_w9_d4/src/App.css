@@ -22,6 +22,16 @@ div > span {
   margin-right: 15px;
 }
 
+.voteItem {
+  display: flex; 
+  align-items: center; /* Center-align items vertically */
+  justify-content: space-between; /* Space out the child elements */
+  background-color: #f5f5dc; 
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+}
+
 button {
   padding: 10px 20px;
   background-color: #4CAF50; 
@@ -29,16 +39,9 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right;
+
 }
 
 button:hover {
   background-color: #45a049;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
 }
