@@ -1,6 +1,6 @@
 /* App.css */
 
-/* Color variables for easy theming */
+/* Color variables */
 :root {
   --primary-color: #4a90e2; /* Blue */
   --secondary-color: #f4f4f4; /* Light gray */
@@ -14,13 +14,13 @@ body, .App {
   color: var(--text-color);
 }
 
-/* General styles for sections */
+/* Section styles */
 .section {
   padding: 4rem 0;
   color: var(--text-color);
 }
 
-/* Styles for the contact section */
+/* Contact section styles */
 .contact-section {
   background-color: var(--secondary-color);
   padding: 2rem;
@@ -64,7 +64,7 @@ body, .App {
   background-color: darken(var(--accent-color), 10%);
 }
 
-/* Responsiveness */
+/* Responsive design */
 @media (max-width: 768px) {
   .section {
     padding: 2rem 1rem;
@@ -97,26 +97,26 @@ body, .App {
   z-index: -1;
 }
 
-/* Styles for section containers holding images */
+/* Image container styles */
 .image-container {
-  width: 800px; /* Ширина контейнера изображения */
-  height: 500px; /* Высота контейнера изображения */
-  border-radius: 40%; /* Круглая форма контейнера */
-  overflow: hidden; /* Скрывает части изображения, выходящие за границы контейнера */
+  width: 800px; /* Image container width */
+  height: 500px; /* Image container height */
+  border-radius: 40%; /* Container roundness */
+  overflow: hidden; /* Hides parts outside the container */
   position: relative;
-  box-shadow: 0 0 5px 3px var(--secondary-color); /* Размытая тень для эффекта */
-  margin: auto; /* Центрирует изображение */
+  box-shadow: 0 0 5px 3px var(--secondary-color); /* Blurred shadow effect */
+  margin: auto; /* Center the image */
 }
 
-/* Adjusting the size and position of the images */
+/* Image sizing and positioning */
 .image-container img {
-  width: 100%; /* Заставляет изображение заполнять контейнер */
-  height: auto; /* Поддерживает пропорции изображения */
+  width: 100%; /* Full width of the container */
+  height: auto; /* Auto height to maintain aspect ratio */
   position: relative;
-  border-radius: 30%; /* Обеспечивает круглую форму изображения */
+  border-radius: 30%; /* Image roundness */
 }
 
-/* Gradient effect for additional fading */
+/* Gradient effect for fading edges */
 .image-container::after {
   content: '';
   position: absolute;
