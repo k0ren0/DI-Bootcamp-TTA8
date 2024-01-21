@@ -30,10 +30,10 @@ function Events() {
           background: 'none',
           cursor: 'pointer',
           color: 'blue',
-          marginBottom: '16px', // Add margin to separate buttons
+          marginBottom: '16px', 
         }}
       >
-        Click Me
+        Click on Me
       </button>
       <br />
       <input
