@@ -42,15 +42,27 @@ function Calculator() {
   };
 
   return (
-    <div className="calculator-container">
+    <div className="calculator-container p-4 w-96"> 
       <h1 className="calculator-title">Calculator</h1>
+      <div className="flex flex-row mb-2"> 
       <input
         type="number"
         placeholder="Enter digital"
         value={num1}
         onChange={handleNum1Change}
-        className="calculator-input"
-      />
+        className="calculator-input w-1/4 mr-2"
+        style={{ width: '48%' }} 
+        />
+        <input
+        type="number"
+        placeholder="Enter digital"
+        value={num2}
+        onChange={handleNum2Change}
+        className="calculator-input w-1/4"
+        style={{ width: '48%' }} 
+        />
+
+      </div>
       <select
         value={operation}
         onChange={handleOperationChange}
@@ -61,13 +73,6 @@ function Calculator() {
         <option value="multiply">*</option>
         <option value="divide">/</option>
       </select>
-      <input
-        type="number"
-        placeholder="Enter digital"
-        value={num2}
-        onChange={handleNum2Change}
-        className="calculator-input"
-      />
       <button
         onClick={handleCalculate}
         className="calculator-button"

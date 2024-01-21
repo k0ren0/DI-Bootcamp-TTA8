@@ -28,14 +28,14 @@
 
 .calculator-input {
   color: #000000;
-  font-weight: bold;
+  /* font-weight: bold; */
   width: 100%;
   padding: 10px;
   border: 1px solid #ffffff;
   background-color: #b691be;
   border-radius: 5px;
-  margin-bottom: 10px;
-  text-align: left;
+  margin: 2px 3px 20px 2px;
+  text-align: center;
 }
 
 .calculator-input::placeholder {
