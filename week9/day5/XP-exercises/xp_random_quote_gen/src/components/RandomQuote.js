@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import quotes from './QuotesDatabase';
 
-
 const RandomQuote = () => {
   const [quote, setQuote] = useState({});
   const [color, setColor] = useState('#FFFFFF');
@@ -20,20 +19,20 @@ const RandomQuote = () => {
     return randomColor;
   };
 
-  useEffect(() => {
-    handleNewQuote();
-  }, []);
-
   const handleNewQuote = () => {
     getRandomQuote();
     const newColor = getRandomColor();
     setColor(newColor);
     document.body.style.backgroundColor = newColor;
-    setFadeIn(false); 
+    setFadeIn(false);
     setTimeout(() => {
-      setFadeIn(true); 
+      setFadeIn(true);
     }, 100);
   };
+
+  useEffect(() => {
+    handleNewQuote();
+  }, []);
 
   return (
     <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
@@ -49,7 +48,7 @@ const RandomQuote = () => {
               </h6>
             </div>
           </div>
-          <div style={{ width: '100%', marginTop: '40px', marginBottom: '0px' }}>
+          <div style={{ width: '100%', marginTop: '20px', marginBottom: '20px' }}>
             <button
               className="btn fadeInSlideDown"
               onClick={handleNewQuote}
