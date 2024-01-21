@@ -1,4 +1,3 @@
-// src/components/Contact.js
 import React from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
