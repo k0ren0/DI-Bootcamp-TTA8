@@ -25,7 +25,7 @@ function App() {
       {languages.map((lang, index) => (
         <div key={index}>
           <span>{lang.votes} {lang.name}</span>
-          <button onClick={() => incrementVote(lang.name)}>Click Here</button>
+          <button onClick={() => incrementVote(lang.name)}>Your vote</button>
         </div>
       ))}
     </div>
