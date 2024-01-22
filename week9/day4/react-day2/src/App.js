@@ -1,8 +1,8 @@
+import React, { useState } from 'react';
 import User from './components/User';
 import './App.css';
-import users from "./users.json"
-console.log(users)
-
+import users from './users.json';
+import SearchUsers from './components/SearchUsers';
 
 
 /** inline style 
@@ -19,15 +19,26 @@ console.log(users)
 
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filterUsers = () => {
+    if (searchQuery.trim() === '') {
+      // If the search query is empty or contains only whitespace, return all users
+      return users;
+    } else {
+      // Filter users based on the search query
+      return users.filter((item) =>
+        item.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+  };
+
   return (
     <div>
-        {
-        users.map((item,indx) => {
-          return <User userinfo={item} key={indx} />
-        })
-        
-        }
-      
+      <SearchUsers onSearch={(value) => setSearchQuery(value)} />
+      {filterUsers().map((item, indx) => {
+        return <User userinfo={item} key={indx} />;
+      })}
     </div>
   );
 }
