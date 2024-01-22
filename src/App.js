@@ -1,25 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import User from "./components/User";
+import "./App.css";
+// import users from "./users.json";
+import GetUsersButton from "./components/GetUsersButton";
+import SearchUsers from "./components/SearchUsers";
+import React, { Component, useState, useEffect } from "react";
+/** inline style
+ * class - external css
+ * css library
+ */
 
-function App() {
+/**
+ * components - function / class
+ * hooks
+ * lifecycle component
+ * state
+ * rerender
+ */
+const App = () => {
+  const [title, setTitle] = useState();
+  const [users, setUsers] = useState();
+  const [filterUsers, setFilterUsers] = useState();
+  // const myusers = [] -> useRef()
+
+  useEffect(() => {
+    // console.log("useEffect");
+    // if (users) changeTitle();
+    getUsers();
+    // return ()=> {
+    //   console.log('unmpounting');
+    // }
+  }, []);
+
+  // const changeTitle = () => {
+  //   setTitle("My Users");
+  //   // getUsers();
+  // };
+
+  const getUsers = () => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setUsers(data);
+        setFilterUsers(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const search = (value) => {
+    const filter = users.filter((item) => {
+      return item.name.toLowerCase().includes(value.toLowerCase());
+    });
+    setFilterUsers(filter);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>{title}</h1>
+      {/* <GetUsersButton getUsersFunc={getUsers} /> */}
+      <SearchUsers search={search}/>
+      {filterUsers
+        ? filterUsers.map((item) => {
+            return <User userinfo={item} key={item.id} />;
+          })
+        : null}
     </div>
   );
-}
+};
 
 export default App;
