@@ -1,22 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from "react"
+
+class ColorComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      favoriteColor: "red",
+    };
+  }
+
+  componentDidUpdate() {
+    console.log("after update");
+  }
+
+  getSnapshotBeforeUpdate(pervProps, prevState) {
+    return null;
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        favoriteColor: "yellow" });
+    }, 1000);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1 style={{ border: '1px solid grey' }}>{this.state.favoriteColor}</h1>
+        <button onClick={() => this.setState({ favoriteColor: 'blue' })}>
+          Change Color to Blue
+        </button>
+      </div>
+    );
+  }
+
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <ColorComponent />
       </header>
     </div>
   );
