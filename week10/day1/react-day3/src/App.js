@@ -4,7 +4,6 @@ import Child from './components/Child';
 import Parent from './components/Parent';
 import ErrorBoundary from './ErrorBoundary';
 
-
 function App() {
 return (
     <div className="App">
