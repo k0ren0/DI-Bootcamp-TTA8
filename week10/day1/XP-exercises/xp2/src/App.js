@@ -35,7 +35,7 @@ class ColorComponent extends Component {
   render() {
     return (
       <div>
-        <h1 style={{ color: this.state.favoriteColor }}>{this.state.favoriteColor}</h1>
+        <h1> My Favorite color is <span style={{ color: this.state.favoriteColor }}> {this.state.favoriteColor}</span></h1>
         <button onClick={() => this.setState({ favoriteColor: 'blue' })}>
           Change Color to Blue
         </button>
