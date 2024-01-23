@@ -1,57 +1,119 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-const Products = (props) => {
-  const [products, setProducts] = useState([]);
+const Product = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Define an async function to fetch data
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/api/products`);
-        // Assuming the API response contains an array of products
-        setProducts(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+        const response = await axios.get(`${BASE_URL}/api/products/${id}`);
+        setProduct(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError(err);
+        setLoading(false);
       }
     };
 
-    // Call the fetchData function when the component mounts
     fetchData();
-  }, []); // Empty dependency array means this effect runs once when the component mounts
+  }, [id]);
+
+  const backToShop = () => {
+    navigate('/');
+  };
 
   return (
-    <>
-      <h1>Shop</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>{product.name}</li>
-        ))}
-      </ul>
-    </>
+    <div>
+      <h1>Product</h1>
+      {loading ? (
+        <div>Loading...</div>
+      ) : error ? (
+        <div>Error fetching data: {error.message}</div>
+      ) : (
+        <div>
+          {product.map((item) => (
+            <div key={item.product_id}>
+              <h1>{item.product_name}</h1>
+              <h2>{item.price}</h2>
+              <p>{item.description}</p>
+            </div>
+          ))}
+          <button onClick={backToShop}>Back to Shop</button>
+        </div>
+      )}
+    </div>
   );
 };
 
-export default Products;
+export default Product;
 
 
 
-// import { useState, useEffect } from "react";
-// import axios from "axios";
+
+// // duble link
+
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import { useParams, useNavigate, Link } from 'react-router-dom';
 
 // const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-// const Products = (props) => {
-//   const [products, setProducts] = useState();
+// const Product = () => {
+//   const { id } = useParams();
+//   const [product, setProduct] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+//   const navigate = useNavigate();
 
-//   useEffect(() => {}, []);
-  
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const response = await axios.get(`${BASE_URL}/api/products/${id}`);
+//         setProduct(response.data);
+//         setLoading(false);
+//       } catch (err) {
+//         setError(err);
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchData();
+//   }, [id]);
+
+//   const backToShop = () => {
+//     navigate('/');
+//   };
+
 //   return (
-//     <>
-//       <h1>Shop</h1>
-//     </>
+//     <div>
+//       <h1>Product</h1>
+//       {loading ? (
+//         <div>Loading...</div>
+//       ) : error ? (
+//         <div>Error fetching data: {error.message}</div>
+//       ) : (
+//         <div>
+//           {product.map((item) => (
+//             <div key={item.product_id}>
+//               <h1>{item.product_name}</h1>
+//               <h2>{item.price}</h2>
+//               <p>{item.description}</p>
+//             </div>
+//           ))}
+//           <Link to='/'>Back to Shop</Link>
+//           <button onClick={backToShop}>Back to Shop</button>
+//         </div>
+//       )}
+//     </div>
 //   );
 // };
-// export default Products;
+
+// export default Product;
