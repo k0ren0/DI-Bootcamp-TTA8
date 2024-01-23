@@ -23,7 +23,8 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here (e.g., sending data to a server, logging to console, etc.)
+    const queryParameters = new URLSearchParams(formData).toString();
+    window.location.href = `http://localhost:3000/?${queryParameters}`;
   }
 
   return (
@@ -77,7 +78,11 @@ function App() {
         </div>
         <select name="destination" value={formData.destination} onChange={handleChange}>
           <option value="">-- Please Choose a Destination --</option>
-          {/* Add more destination options here */}
+              <option value="Israel">Israel</option>
+              <option value="Belarus">Belarus</option>
+              <option value="USA">USA</option>
+              <option value="Canada">Canada</option>
+              <option value="Japan">Japan</option>
         </select>
         <div>
           <label className="checkbox-label">

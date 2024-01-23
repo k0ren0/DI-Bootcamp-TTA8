@@ -48,18 +48,22 @@ label {
 
 /* Smaller submit button */
 .submit-button {
-  background-color: #007bff;
+  background-color: #00c8ff;
   color: white;
-  padding: 5px 10px; /* Smaller padding */
+  padding: 10px 20px; /* Smaller padding */
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px; /* Smaller font size */
-  margin-top: 10px; /* Optional: Adds a little space above the button */
+  margin-top: 10px; /* Space above the button */
+
+  width: auto; /* Adjusts width to content */
+  display: inline-block; /* To enable margin auto for horizontal centering */
+  margin-right: auto;
 }
 
 .submit-button:hover {
-  background-color: #0056b3;
+  background-color: #00b365;
 }
 
 .gender-selection > div {
