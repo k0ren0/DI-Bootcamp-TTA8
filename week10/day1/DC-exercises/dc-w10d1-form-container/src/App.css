@@ -31,6 +31,13 @@ label {
   font-weight: bold;
 }
 
+/* New CSS for checkbox labels with specific class */
+.checkbox-label {
+  display: block;
+  margin-left: 20px; /* Indentation for checkbox labels */
+  margin-bottom: 10px; /* Space between each checkbox label */
+}
+
 .checkbox-group {
   margin-bottom: 15px;
 }
@@ -39,16 +46,22 @@ label {
   margin-right: 5px;
 }
 
+/* Smaller submit button */
 .submit-button {
   background-color: #007bff;
   color: white;
-  padding: 10px 15px;
+  padding: 5px 10px; /* Smaller padding */
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px; /* Smaller font size */
+  margin-top: 10px; /* Optional: Adds a little space above the button */
 }
 
 .submit-button:hover {
   background-color: #0056b3;
+}
+
+.gender-selection > div {
+  margin-bottom: 10px;
 }

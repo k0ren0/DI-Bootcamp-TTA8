@@ -23,7 +23,7 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here
+    // Handle form submission logic here (e.g., sending data to a server, logging to console, etc.)
   }
 
   return (
@@ -51,54 +51,65 @@ function App() {
           value={formData.age}
           onChange={handleChange}
         />
-        <div>
-          <input
-            type="radio"
-            id="male"
-            name="gender"
-            value="male"
-            checked={formData.gender === 'male'}
-            onChange={handleChange}
-          />
-          <label htmlFor="male">Male</label>
-          <input
-            type="radio"
-            id="female"
-            name="gender"
-            value="female"
-            checked={formData.gender === 'female'}
-            onChange={handleChange}
-          />
-          <label htmlFor="female">Female</label>
+        <div className="gender-selection">
+          <div>
+            <input
+              type="radio"
+              id="male"
+              name="gender"
+              value="male"
+              checked={formData.gender === 'male'}
+              onChange={handleChange}
+            />
+            <label htmlFor="male">Male</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              value="female"
+              checked={formData.gender === 'female'}
+              onChange={handleChange}
+            />
+            <label htmlFor="female">Female</label>
+          </div>
         </div>
         <select name="destination" value={formData.destination} onChange={handleChange}>
           <option value="">-- Please Choose a Destination --</option>
           {/* Add more destination options here */}
         </select>
         <div>
-          <input
-            type="checkbox"
-            name="nutsFree"
-            checked={formData.nutsFree}
-            onChange={handleChange}
-          />
-          <label>Nuts free</label>
-          <input
-            type="checkbox"
-            name="lactoseFree"
-            checked={formData.lactoseFree}
-            onChange={handleChange}
-          />
-          <label>Lactose free</label>
-          <input
-            type="checkbox"
-            name="vegan"
-            checked={formData.vegan}
-            onChange={handleChange}
-          />
-          <label>Vegan</label>
+          <label className="checkbox-label">
+            <input
+              type="checkbox"
+              name="nutsFree"
+              checked={formData.nutsFree}
+              onChange={handleChange}
+            />
+            Nuts free
+          </label>
+          <label className="checkbox-label">
+            <input
+              type="checkbox"
+              name="lactoseFree"
+              checked={formData.lactoseFree}
+              onChange={handleChange}
+            />
+            Lactose free
+          </label>
+          <label className="checkbox-label">
+            <input
+              type="checkbox"
+              name="vegan"
+              checked={formData.vegan}
+              onChange={handleChange}
+            />
+            Vegan
+          </label>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit-button">Submit</button>
+
       </form>
 
       <div className="entered-information">
