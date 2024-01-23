@@ -3,13 +3,12 @@ import About from './components/About';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import ErrorPage from './components/ErrorPage';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link, createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
-/** Routering */
-
-function App() {
+/** Routing */
+const Root = () => {
   return (
-    <div className="App">
+    <>
       <header> 
         <nav>
           <Link to="/">Home</Link>{" "}
@@ -17,16 +16,44 @@ function App() {
           <Link to="/shop">Shop</Link>{" "}
         </nav>
       </header>
+      <Outlet /> 
+    </>
+  );
+};
 
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
-        <Route path="/shop" element={<Shop />}/>
-        <Route path="/shop/:productid" element={<Shop />}/>
-        <Route path="/shop/:productid/:shopid" element={<Shop />}/>
-        <Route path="/*" element={<ErrorPage />}/>
-      </Routes>
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root/>,
+    children: [
+      {
+        path: "/", // Home page
+        element: <Home />,
+      },
+      {
+        path: "/about", // About page
+        element: <About />,
+      },
+      {
+        path: "/shop", // Shop page without product ID
+        element: <Shop />,
+      },
+      {
+        path: "/shop/:productid", // Shop page with product ID
+        element: <Shop />,
+      },
+      {
+        path: "*", // Any other path
+        element: <ErrorPage />, // Component for displaying error
+      },
+    ],
+  },
+]);
 
+function App() {
+  return (
+    <div className="App">
+      <RouterProvider router={router} />
     </div>
   );
 }
