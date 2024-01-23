@@ -3,8 +3,19 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import "./App.css";
+import PostList from './components/PostList'; //ex2
 
-const HomeScreen = () => <header>Home</header>;
+// ADD ex2
+const HomeScreen = () => (
+  <div>
+    <header>Home</header>
+    <br/>
+    <h2>Exercise 2</h2>
+    <br/>
+    <PostList />
+  </div>
+);
+
 const ProfileScreen = () => <header>Profile Screen</header>;
 const ShopScreen = () => {
   throw new Error('Shop error');
@@ -41,8 +52,13 @@ function App() {
             <ShopScreen />
           </ErrorBoundary>
         } />
+          
+          {/* ADD EX2 */}
+        <Route path="/posts" element={<PostList />} />  
       </Routes>
+      
     </BrowserRouter>
+    
   );
 }
 
