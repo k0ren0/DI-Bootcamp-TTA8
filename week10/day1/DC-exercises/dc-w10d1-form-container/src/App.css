@@ -6,7 +6,7 @@ body {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #f5f5dc; /* Beige color for the form container */
+  background-color: #f5f5dc; /* color for the form container */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -33,8 +33,8 @@ label {
 
 .checkbox-label {
   display: block;
-  margin-left: 20px; /* Indentation for checkbox labels */
-  margin-bottom: 10px; /* Space between each checkbox label */
+  margin-left: 20px; /* indentation  */
+  margin-bottom: 10px; /* space between each checkbox  */
 }
 
 .checkbox-group {
@@ -46,7 +46,7 @@ label {
 }
 
 .submit-button {
-  background-color: rgb(135, 163, 139); /* Light blue color */
+  background-color: rgb(135, 163, 139);
   color: rgb(18, 34, 3);
   padding: 10px 20px;
   border: none;
@@ -60,7 +60,7 @@ label {
 }
 
 .submit-button:hover {
-  background-color: #00b365; /* Dark green color */
+  background-color: #00b365; /* color */
 }
 
 .gender-selection > div {
@@ -68,7 +68,7 @@ label {
 }
 
 .entered-information {
-  background-color: #013220; /* Dark green color for the entered information section */
+  background-color: #013220; /* color for the entered information section */
   color: white;
   padding: 20px;
   margin-top: 20px;
