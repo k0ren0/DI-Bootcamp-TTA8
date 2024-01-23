@@ -3,8 +3,8 @@ import './App.css';
 
 function App() {
   const fetchData = async () => {
-
-    const url = '/511bce24-4fac-4e72-b074-79dbba28006d';
+ 
+    const url = '/511bce24-4fac-4e72-b074-79dbba28006d'; // short url => used proxy
     const data = {
       key1: 'myusername',
       email: 'mymail@gmail.com',
@@ -22,7 +22,6 @@ function App() {
         body: JSON.stringify(data),
       });
 
- 
       if (!response.ok) {
         throw new Error(`Network response was not ok, status: ${response.status}`);
       }
