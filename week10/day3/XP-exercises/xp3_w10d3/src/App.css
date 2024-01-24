@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Styling for the todo list form */
+.todo-form {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; /* Added background color */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Styling for the input field */
+.input-field {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 2px solid #61dafb;
+}
+
+/* Styling for the Add button */
+.add-btn {
+  padding: 10px 20px;
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #4da8e0;
+}
+
+/* Styling for the todo list items */
+.todo-item {
+  background-color: #282c34;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling for the Remove button in each todo item */
+.remove-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.remove-btn:hover {
+  background-color: darkred;
+}
+
+/* Media query for the spinning logo */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
