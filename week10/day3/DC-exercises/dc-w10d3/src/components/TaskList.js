@@ -15,8 +15,12 @@ function TaskList() {
   };
 
   return (
-    <div>
-      <button onClick={handleRemoveCompletedTasks}>Remove Completed Tasks</button>
+    <div className="todo-container">
+      <div className="remove-button-container">
+        <button className="remove-button" onClick={handleRemoveCompletedTasks}>
+          Remove Completed Tasks
+        </button>
+      </div>
       <ul>
         {filteredTasks.map(task => (
           <li key={task.id}>
@@ -27,7 +31,7 @@ function TaskList() {
             />
             {task.text}
             <button onClick={() => dispatch({ type: 'REMOVE_TASK', id: task.id })}>Remove</button>
-            <button onClick={() => dispatch({ type: 'EDIT_TASK', id: task.id, text: 'New Task Text' })}>Edit</button>
+            {/* Здесь можно добавить кнопку и логику для редактирования задачи, если требуется */}
           </li>
         ))}
       </ul>
