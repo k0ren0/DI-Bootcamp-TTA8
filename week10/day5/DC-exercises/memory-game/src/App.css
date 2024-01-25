@@ -16,7 +16,6 @@
 /* Styles for score */
 .score {
   font-size: 1.5em;
-  font-weight: bold;
 }
 
 /* Styles for top-score */
@@ -59,24 +58,24 @@
 
 /* Styles for card-info */
 .card-info {
-  padding: 15px;
-  text-align: center;
+  padding: 5px;
+  margin: 0;
+  text-align: left;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Styles for card-title */
+/* Styles for card-title (Name) */
 .card-title {
-  margin: 10px 0;
-  font-size: 1.5em;
+  margin: 10px 0 0; 
+  font-size: 1em;
 }
 
-/* Styles for card-occupation */
+/* Styles for card-occupation (Occupation) */
 .card-occupation {
   font-size: 1em;
-  font-weight: bold;
   color: #555;
 }
 
@@ -110,7 +109,7 @@
 .score-text h4 {
   margin: 0;
   font-size: 1.5em;
-  font-weight: bold;
+  
 }
 
 /* Styles for header in App-header */
@@ -120,3 +119,14 @@
   padding: 20px;
   text-align: center;
 }
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+}
+
