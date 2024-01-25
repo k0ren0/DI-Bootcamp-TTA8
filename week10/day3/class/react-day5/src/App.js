@@ -1,45 +1,37 @@
-import React, { useState, useRef } from 'react';
 import './App.css';
+import { useState, useReducer } from 'react';
 
+const initialState = {
+  count: 10,
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "increment":
+      return { ...state, count: state.count + action.by };
+    case "decrement":
+      return { ...state, count: state.count - 1 };
+    default:
+      return state;
+  }
+};
 
 function App() {
-  const [count, setCount] = useState(0); 
-
-  let name = "John";
-  const nameRef = useRef("Dan");
-  const inputRef = useRef();
-
-  // console.log(nameRef);
-
-  const changeJohn = () => {
-    name = "Marry";
-    // console.log(name);
-  };
-
-  const changeDan = () => {
-    nameRef.current = "DanDan";
-    // console.log(nameRef);
-    console.log(inputRef.current.value);
-  };
+  const [count, setCount] = useState(0);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div className="App">
       <header className="App-header">
-        <div>
-          <h1> {count}</h1>
-          <button onClick={()=>setCount(count+1)}>+</button>
-        </div>
-        <div>
-          <h3>{name}</h3>
-          <button onClick={()=> changeJohn()}> Change John</button>
-        </div>
-        <div>
-          <h3>{nameRef.current}</h3>
-          <button onClick={()=> changeDan()}> Change Dan</button>
-        </div>
-        <div>
-          <input ref={inputRef}/>
-        </div>
+        <h2>useState</h2>
+        <button onClick={() => setCount(count + 1)}> + </button>
+        {count}
+        <button onClick={() => setCount(count - 1)}> - </button>
+        
+        <h2>useReducer</h2>
+        <button onClick={() => dispatch({ type: "increment", by: 1 })}> + </button>
+        {state.count}
+        <button onClick={() => dispatch({ type: "decrement" })}> - </button>
       </header>
     </div>
   );
