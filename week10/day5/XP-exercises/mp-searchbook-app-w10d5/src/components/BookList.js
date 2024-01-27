@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import SearchBox from './SearchBox';
 import BookCard from './BookCard';
 import Filter from './Filter';
@@ -11,7 +11,7 @@ const BookList = () => {
   const [error, setError] = useState(null);
 
   // Определите функцию fetchBooks
-  const fetchBooks = async () => {
+  const fetchBooks = useCallback(async () => {
     if (!searchTerm) return; // Если searchTerm пуст, не делать запрос
 
     setError(null); // Сброс ошибки перед запросом
@@ -22,11 +22,11 @@ const BookList = () => {
       setError('Error fetching data');
       console.error('Error fetching data: ', error);
     }
-  };
+  }, [searchTerm]);
 
   useEffect(() => {
     fetchBooks(); // Первичный запрос при монтировании компонента
-  }, [searchTerm]);
+  }, [searchTerm, fetchBooks]);
 
   // Функция для обработки поиска
   const onSearch = () => {
