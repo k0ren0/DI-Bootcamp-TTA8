@@ -10,30 +10,42 @@ const BookList = () => {
   const [sortOrder, setSortOrder] = useState('newest');
   const [error, setError] = useState(null);
 
-  // Определите функцию fetchBooks
+  // Define the fetchBooks function
   const fetchBooks = useCallback(async () => {
-    if (!searchTerm) return; // Если searchTerm пуст, не делать запрос
-
-    setError(null); // Сброс ошибки перед запросом
+    if (!searchTerm) return; // Don't make a request if searchTerm is empty
+  
+    setError(null); // Reset error before making a request
     try {
       const result = await axios(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`);
       setBooks(result.data.items || []);
     } catch (error) {
-      setError('Error fetching data');
-      console.error('Error fetching data: ', error);
+      if (error.response) {
+        // The request was made, but the server responded with an error status code
+        setError(`Error: ${error.response.status} - ${error.response.statusText}`);
+        console.error('Error response:', error.response.data);
+      } else if (error.request) {
+        // The request was made, but no response was received
+        setError('No response received from the server');
+        console.error('No response received:', error.request);
+      } else {
+        // Something happened in setting up the request
+        setError('Error setting up the request');
+        console.error('Request setup error:', error.message);
+      }
     }
   }, [searchTerm]);
+  
 
   useEffect(() => {
-    fetchBooks(); // Первичный запрос при монтировании компонента
+    fetchBooks(); // Initial request when the component mounts
   }, [searchTerm, fetchBooks]);
 
-  // Функция для обработки поиска
+  // Function to handle search
   const onSearch = () => {
-    fetchBooks(); // Запустить запрос на основе searchTerm
+    fetchBooks(); // Trigger a request based on the searchTerm
   };
 
-  // Функция для сортировки книг
+  // Function to sort books
   const sortBooks = (books, sortOrder) => {
     return books.sort((a, b) => {
       if (sortOrder === 'newest') {
@@ -62,7 +74,7 @@ const BookList = () => {
               <BookCard book={book} />
             </div>
           );
-          })}
+        })}
       </div>
     </div>
   );
