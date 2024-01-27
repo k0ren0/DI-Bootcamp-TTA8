@@ -58,7 +58,6 @@ const BookList = () => {
     <div>
       <div className="row justify-content-center align-items-center mb-3">
         <div className="col-md-3">
-          {/* Обновленный SearchBox с передачей функции onSearch */}
           <SearchBox setSearchTerm={setSearchTerm} onSearch={onSearch} />
         </div>
         <div className="col-md-3">
