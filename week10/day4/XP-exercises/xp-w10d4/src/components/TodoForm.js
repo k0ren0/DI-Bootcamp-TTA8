@@ -23,7 +23,7 @@ const TodoForm = ({ dispatch }) => {
                 className="todo-input"
             />
             <button type="submit" className="add-btn">
-                Add Todo
+                Add your task
             </button>
         </form>
     );
