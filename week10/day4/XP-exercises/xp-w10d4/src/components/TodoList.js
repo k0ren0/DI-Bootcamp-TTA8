@@ -10,7 +10,7 @@ const TodoList = ({ todos, dispatch }) => {
                 {todos.map((todo, index) => (
                     <li key={index} className={`todo-item ${todo.completed ? 'completed' : ''}`}>
                         <span className="task-number">Task {index + 1}:</span>
-                        <span className="todo-text">{todo.text}</span> {/* Добавлен класс todo-text */}
+                        <span className="todo-text">{todo.text}</span> 
                         <button onClick={() => dispatch(toggleTodo(index))} className="toggle-btn">
                             Toggle
                         </button>
