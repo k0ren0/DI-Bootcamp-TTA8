@@ -1,0 +1,53 @@
+.inventory-list-container {
+    margin-top: 20px; /* Reduced top margin */
+    margin-bottom: 5px; /* Reduced bottom margin */
+    margin-left: 20px; /* Keeping left margins as they are */
+    margin-right: 20px; /* Keeping right margins as they are */
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #beb8b8;
+  }
+
+  .inventory-list-container h3 {
+    margin-top: 5px; 
+    margin-bottom: 15px; 
+  }
+  
+  .table-container {
+    max-height: 100vh;
+    overflow-y: auto;
+
+  }
+  
+  .inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .inventory-table th, .inventory-table td {
+    text-align: left;
+    padding: 8px 16px;
+    border-bottom: 1px solid #312424;
+  }
+  
+  .inventory-table thead {
+    position: sticky;
+    top: 0;
+    background-color: #383838;
+    color: rgb(255, 255, 255);
+  }
+  
+  .inventory-table tr:nth-child(even) {
+    background-color: #312424;
+  }
+  
+  .inventory-table tr:hover {
+    background-color: #3e3030;
+  }
+  
+
+  .App-header h3 {
+    margin-top: 15px; 
+    margin-bottom: 5px; 
+  }
