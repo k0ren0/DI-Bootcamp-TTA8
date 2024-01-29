@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTask } from './tasksSlice';
 
-export function AddTask({ selectedDay }) {
+const AddTask = ({ selectedDay }) => {
   const [taskText, setTaskText] = useState('');
   const dispatch = useDispatch();
 
@@ -25,4 +25,6 @@ export function AddTask({ selectedDay }) {
       <button type="submit">Add Task</button>
     </form>
   );
-}
+};
+
+export default AddTask;

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { AddTask } from './features/tasks/AddTask';
-import TasksDisplay from './features/tasks/TasksDisplay'; // Updated import path
-import DatePicker from './features/tasks/DatePicker'; // Updated import path
-import './App.css';
+import AddTask from './features/tasks/AddTask';
+import TasksDisplay from './features/tasks/TasksDisplay'; 
+import DatePicker from './features/tasks/DatePicker'; 
 import logo from './logo.svg';
+import './App.css';
+
 
 
 function App() {
@@ -13,14 +14,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Daily Planner</h1>
+        <h1>Planner Application</h1>
         <DatePicker onDateChange={setSelectedDay} />
         <AddTask selectedDay={selectedDay} />
         <TasksDisplay selectedDay={selectedDay} />
       </header>
-      <main>
-        {/* Additional content can go here */}
-      </main>
+      {/* <main>
+        
+      </main> */}
     </div>
   );
 }

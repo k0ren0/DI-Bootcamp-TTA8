@@ -1,17 +1,27 @@
 .taskItem {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    text-align: left; /* Align text to the left */
   }
   
-  .taskCounter {
+  .taskContent {
+    display: flex;
+    align-items: center;
+  }
+  
+  .taskNumber {
     margin-right: 10px;
     font-weight: bold;
   }
   
-  .taskText, .taskInput {
-    flex-grow: 1;
-    margin-right: 10px;
+  .taskText {
+    margin-right: 20px;
   }
   
+  .taskActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+ 
