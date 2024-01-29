@@ -22,7 +22,9 @@ const AddTask = ({ selectedDay }) => {
         onChange={e => setTaskText(e.target.value)}
         placeholder="Enter new task"
       />
-      <button type="submit">Add Task</button>
+      <button 
+      type="submit"
+      className="taskButton addButton" >Add Task</button>
     </form>
   );
 };

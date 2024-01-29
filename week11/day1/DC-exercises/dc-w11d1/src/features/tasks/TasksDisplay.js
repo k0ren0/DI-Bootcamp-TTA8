@@ -42,15 +42,28 @@ const TasksDisplay = () => {
                       onChange={(e) => handleTextEdit(task.id, e.target.value)}
                       className="taskInput"
                     />
-                    <button onClick={() => handleEditSave(date, task.id)}>Save</button>
+                    <button 
+                      onClick={() => handleEditSave(date, task.id)}
+                      className="taskButton saveButton"  // Added class for Edit button color
+                    >
+                      Save
+                    </button>
                   </>
                 ) : (
                   <>
                     <span className="taskText">{task.text}</span>
-                    <button onClick={() => handleEditStart(date, task.id, task.text)}>Edit</button>
+                    <button 
+                      onClick={() => handleEditStart(date, task.id, task.text)}
+                      className="taskButton editButton"  // Added class for Edit button color
+                    >
+                      Edit
+                    </button>
                   </>
                 )}
-                <button onClick={() => dispatch(deleteTask({ day: date, taskId: task.id }))}>
+                <button 
+                  onClick={() => dispatch(deleteTask({ day: date, taskId: task.id }))} 
+                  className="taskButton deleteButton"  // Added class for Delete button color
+                >
                   Delete
                 </button>
               </div>

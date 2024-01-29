@@ -1,0 +1,28 @@
+.LogsContainer {
+  text-align: center;
+}
+
+.LogsButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.loginButton, .logoutButton {
+  border-radius: 15px;
+  color: white;
+}
+
+.loginButton {
+  background-color: #7700ff;
+  margin-left: 5px;
+  
+}
+
+.logoutButton {
+  background-color: #dc3545;
+  padding: auto;
+}

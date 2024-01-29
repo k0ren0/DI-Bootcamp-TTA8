@@ -48,3 +48,23 @@
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
   }
+
+  .addButton {
+    background-color: rgb(146, 2, 236); /* Change to your desired color */
+    color: white;
+  }
+
+  .saveButton {
+    background-color: green; /* Change to your desired color */
+    color: white;
+  }
+  
+  .editButton {
+    background-color: blue; /* Change to your desired color */
+    color: white;
+  }
+  
+  .deleteButton {
+    background-color: red; /* Change to your desired color */
+    color: white;
+  }
