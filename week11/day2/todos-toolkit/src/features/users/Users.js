@@ -1,0 +1,49 @@
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { fetchUsers, addUser } from "./usersSlice";
+
+const Users = (props) => {
+  const users = useSelector((state) => state.users);
+  const dispatch = useDispatch();
+  const [newAuthor, setNewAuthor] = useState("");
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]); // Включите dispatch в зависимости массива
+
+  const handleAddAuthor = () => {
+    if (newAuthor.trim() !== "") {
+      dispatch(
+        addUser(newAuthor) // Используйте addUser из usersSlice для добавления пользователя
+      );
+      setNewAuthor("");
+    }
+  };
+
+  return (
+    <div>
+      <h2>Authors</h2>
+      <div>
+        <input
+          type="text"
+          value={newAuthor}
+          onChange={(e) => setNewAuthor(e.target.value)}
+        />
+        <button onClick={handleAddAuthor}>Add Author</button>
+      </div>
+
+      <select>
+        <option value={-1}>Select Author</option>
+        {users.map((user) => {
+          return (
+            <option value={user.id} key={user.id}>
+              {user.name}
+            </option>
+          );
+        })}
+      </select>
+    </div>
+  );
+};
+
+export default Users;
