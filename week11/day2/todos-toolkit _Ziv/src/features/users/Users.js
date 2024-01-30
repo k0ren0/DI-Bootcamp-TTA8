@@ -1,4 +1,3 @@
-// Users.js
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchUsers, addUser, addUserPrepare } from "./usersSlice";
