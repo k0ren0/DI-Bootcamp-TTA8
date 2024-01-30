@@ -15,7 +15,7 @@ const AddTodo = () => {
 
   return (
     <div>
-      <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
+      <input placeholder='Add your task' type="text" value={input} onChange={(e) => setInput(e.target.value)} />
       <button onClick={handleAddTodo}>Add Todo</button>
     </div>
   );

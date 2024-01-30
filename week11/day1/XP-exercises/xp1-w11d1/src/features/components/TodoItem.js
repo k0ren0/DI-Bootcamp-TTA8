@@ -10,7 +10,7 @@ const TodoItem = ({ todo, index }) => {
       <li className="todo-item">
         <span className="todo-index">{index + 1}.</span> {/* Displaying ordinal number */}
         <input type="checkbox" checked={todo.completed} onChange={() => dispatch(toggleTodo(todo.id))} />
-        <span className="todo-text">{todo.text}</span>
+        <span className="todo-text" style={{ textDecoration: todo.completed ? "line-through" : ""}} >{todo.text}</span>
         <button onClick={() => dispatch(removeTodo(todo.id))}>Remove</button>
       </li>
     );
