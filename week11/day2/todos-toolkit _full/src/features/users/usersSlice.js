@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk, nanoid } from "@reduxjs/toolkit";
 
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  const data = await response.json();
+  const data = response.json();
   return data;
 });
 
@@ -10,7 +10,7 @@ const usersSlice = createSlice({
   name: "users",
   initialState: [],
   reducers: {
-    addUser: (state, action) => {
+    adduser: (state, action) => {
       state.push({ id: nanoid(), name: action.payload });
     },
     addUserPrepare: {
@@ -31,5 +31,5 @@ const usersSlice = createSlice({
   },
 });
 
-export const { addUser, addUserPrepare } = usersSlice.actions;
+export const { adduser, addUserPrepare } = usersSlice.actions;
 export default usersSlice.reducer;

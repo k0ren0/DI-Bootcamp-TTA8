@@ -1,3 +1,4 @@
+// Users.js
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchUsers, addUser, addUserPrepare } from "./usersSlice";
@@ -6,6 +7,7 @@ const Users = (props) => {
   const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const [newAuthor, setNewAuthor] = useState("");
+  const [addMethod, setAddMethod] = useState("addUser");
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -13,14 +15,11 @@ const Users = (props) => {
 
   const handleAddAuthor = () => {
     if (newAuthor.trim() !== "") {
-      dispatch(addUser(newAuthor));
-      setNewAuthor("");
-    }
-  };
-
-  const handleAddAuthorPrepare = () => {
-    if (newAuthor.trim() !== "") {
-      dispatch(addUserPrepare(newAuthor));
+      if (addMethod === "addUser") {
+        dispatch(addUser(newAuthor));
+      } else if (addMethod === "addUserPrepare") {
+        dispatch(addUserPrepare(newAuthor)); // Используем addUserPrepare из usersSlice для добавления пользователя
+      }
       setNewAuthor("");
     }
   };
@@ -35,7 +34,8 @@ const Users = (props) => {
           onChange={(e) => setNewAuthor(e.target.value)}
         />
         <button onClick={handleAddAuthor}>Add Author</button>
-        <button onClick={handleAddAuthorPrepare}>Add Author with Prepare</button>
+        <button onClick={() => setAddMethod("addUser")}>Add Author with addUser</button>
+        <button onClick={() => setAddMethod("addUserPrepare")}>Add Author with addUserPrepare</button> {/* Вторая кнопка */}
       </div>
 
       <select>
