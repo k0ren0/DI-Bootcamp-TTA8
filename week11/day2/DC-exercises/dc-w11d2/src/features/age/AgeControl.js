@@ -1,7 +1,6 @@
-import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ageUpAsync, ageDownAsync } from '../age/ageSlice'; 
-import logo from '../../logo.svg'; 
+import logo from './logo.svg'; 
 
 const AgeControl = () => {
     const age = useSelector((state) => state.age.age);
@@ -9,9 +8,9 @@ const AgeControl = () => {
     const dispatch = useDispatch();
 
     return (
-        <div>
+        <div> 
             {loading ? (
-                <img src={logo} alt="Loading..." className="loading-img" />
+                <img src={logo} style = {{width: "200px"}} alt="Loading..." className="loading-img" />
             ) : (
                 <>
                     <div>Age: {age}</div>
