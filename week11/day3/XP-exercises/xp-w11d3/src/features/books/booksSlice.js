@@ -1,42 +1,31 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice } from '@reduxjs/toolkit';
 
-export const fetchBooks = createAsyncThunk(
-  'books/fetchBooks',
-  async (query) => {
-    try {
-      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
-      return response.data.items;
-    } catch (error) {
-      throw error;
-    }
-  }
-);
+const initialState = {
+  books: [],
+  categories: [],
+  selectedCategory: 'All',
+};
 
 const booksSlice = createSlice({
   name: 'books',
-  initialState: {
-    books: [],
-    status: 'idle', // 'idle', 'loading', 'succeeded', 'failed'
-    error: null
-  },
-  reducers: {},
-  extraReducers: {
-    [fetchBooks.pending]: (state, action) => {
-      state.status = 'loading';
-    },
-    [fetchBooks.fulfilled]: (state, action) => {
-      state.status = 'succeeded';
+  initialState,
+  reducers: {
+    setBooks: (state, action) => {
       state.books = action.payload;
     },
-    [fetchBooks.rejected]: (state, action) => {
-      state.status = 'failed';
-      state.error = action.error.message;
-    }
-  }
+    setCategories: (state, action) => {
+      state.categories = action.payload;
+    },
+    setSelectedCategory: (state, action) => {
+      state.selectedCategory = action.payload;
+    },
+  },
 });
 
-export const selectBooks = (state) => state.books.books;
+export const { setBooks, setCategories, setSelectedCategory } = booksSlice.actions;
 
+export const selectBooks = (state) => state.books.books;
+export const selectCategories = (state) => state.books.categories;
+export const selectSelectedCategory = (state) => state.books.selectedCategory;
 
 export default booksSlice.reducer;
