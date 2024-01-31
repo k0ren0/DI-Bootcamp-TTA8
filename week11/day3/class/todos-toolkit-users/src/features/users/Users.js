@@ -10,7 +10,7 @@ const Users = (props) => {
 
   useEffect(() => {
     dispatch(fetchUsers());
-  }, []);
+  }, [dispatch]); //added dispatch
 
   return (
     <div>
