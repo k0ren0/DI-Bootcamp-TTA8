@@ -1,0 +1,10 @@
+ul.book-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+ 
+  li.book-item {
+    margin-bottom: 10px;
+    padding-left: 20%;
+  }

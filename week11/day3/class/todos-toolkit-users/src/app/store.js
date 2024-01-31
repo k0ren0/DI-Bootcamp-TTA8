@@ -8,7 +8,7 @@ import postsReducer from "../features/posts/postsSlice"
 
 const store = configureStore({
   reducer: {
-    todos: todoReducer,
+    // todos: todoReducer,
     users: usersReducer,
     posts: postsReducer,
   },
