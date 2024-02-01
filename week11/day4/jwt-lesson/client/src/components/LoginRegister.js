@@ -30,6 +30,9 @@ const LoginRegister = ({ page }) => {
 
         if (response.status === 200) {
           setMessage("");
+          const { token } = response.data; // Получаем токен из ответа
+          localStorage.setItem("token", token); // Сохраняем токен в localStorage
+          setToken(token); // Устанавливаем токен в контекст
           navigate("/");
         }
       } else {
@@ -43,6 +46,9 @@ const LoginRegister = ({ page }) => {
 
         if (response.status === 200) {
           setMessage("");
+          const { token } = response.data; // Получаем токен из ответа
+          localStorage.setItem("token", token); // Сохраняем токен в localStorage
+          setToken(token); // Устанавливаем токен в контекст
           navigate("/");
         }
       }

@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./components/Home";
 import LoginRegister from "./components/LoginRegister";
 import Info from "./components/Info.js";
+import Users from "./components/Users"; // Import the Users component
 import { Routes, Route, Navigate } from "react-router-dom";
 import Nav from "./components/Nav";
 
@@ -21,10 +22,7 @@ function App() {
             <Nav />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route
-                path="/login"
-                element={<LoginRegister page={"Login"} />}
-              />
+              <Route path="/login" element={<LoginRegister page={"Login"} />} />
               <Route
                 path="/register"
                 element={<LoginRegister page={"Register"} />}
@@ -33,7 +31,10 @@ function App() {
                 path="/info"
                 element={token ? <Info page={"info"} /> : <Navigate to="/login" />}
               />
-              <Route path="/users" element={<Navigate to="/info" />} />
+              <Route
+                path="/users"
+                element={token ? <Users /> : <Navigate to="/login" />} // Protect the Users route
+              />
             </Routes>
           </div>
         </AuthContext.Provider>

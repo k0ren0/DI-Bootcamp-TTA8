@@ -24,7 +24,6 @@ export const _login = async (req, res) => {
       expiresIn: "60s",
     });
 
-    // Установка куки на клиентской стороне
     res.cookie("token", accesstoken, {
       maxAge: 60 * 1000,
       httpOnly: true,
