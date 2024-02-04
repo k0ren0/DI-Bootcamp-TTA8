@@ -9,6 +9,7 @@ export const _login = async (req, res) => {
     const { email, password } = req.body;
 
     const row = await login(email.toLowerCase());
+    
     if (row.length === 0)
       return res.status(404).json({ msg: "email not found" });
 

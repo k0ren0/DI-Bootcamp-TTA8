@@ -1,12 +1,15 @@
-import React, { useState, createContext } from "react";
+import React, { useState, useContext, createContext } from "react";
+import Home from "./components/Home";
+import Nav from "./components/Nav";
+import Info from "./components/Info";
+import LoginRegister from "./components/LoginRegister";
+import Users from "./components/Users"; 
+import { Routes, Route, Navigate } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import Home from "./components/Home";
-import LoginRegister from "./components/LoginRegister";
-import Info from "./components/Info.js";
-import Users from "./components/Users"; // Import the Users component
-import { Routes, Route, Navigate } from "react-router-dom";
-import Nav from "./components/Nav";
+// import PrivateRoute from "./auth/Auth";
+
+
 
 export const AuthContext = createContext();
 

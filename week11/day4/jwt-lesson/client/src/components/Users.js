@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Импорт useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 // ln -s /Users/koren0/Documents/DI-Bootcamp-TTA8/week11/day4/jwt-lesson/config/db.js
 
 function Users() {
   const [users, setUsers] = useState([]);
-  const navigate = useNavigate(); // Получение функции navigate
+  const navigate = useNavigate(); 
 
   useEffect(() => {
-    // Проверка на наличие токена
+    
     if (!localStorage.getItem("token")) {
-      navigate("/login"); // Если нет токена, перенаправляем на страницу входа
+      navigate("/login"); 
     } else {
       axios
         .get("http://localhost:5005/users", {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`, // Добавляем токен в заголовок
+            Authorization: `Bearer ${localStorage.getItem("token")}`, 
           },
         })
         .then((response) => {
-          console.log("Полученные данные:", response.data); // Отладочный вывод
+          console.log("Data acquisition:", response.data); 
           setUsers(response.data);
         })
         .catch((error) => {
-          console.error("Ошибка загрузки данных:", error);
+          console.error("Fault download data:", error);
         });
     }
   }, [navigate]);
